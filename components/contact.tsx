@@ -1,4 +1,46 @@
+'use client';
+
+import { useState } from 'react';
+
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitMessage, setSubmitMessage] = useState('');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitMessage('');
+
+    const formData = new FormData(e.currentTarget);
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify({
+        access_key:
+          process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE',
+        name: formData.get('name'),
+        email: formData.get('email'),
+        message: formData.get('message'),
+      }),
+    });
+
+    const result = await response.json();
+    setIsSubmitting(false);
+
+    if (result.success) {
+      setSubmitMessage(
+        "Thank you for your message! We'll get back to you soon."
+      );
+      (e.target as HTMLFormElement).reset();
+    } else {
+      setSubmitMessage(
+        'Something went wrong. Please try again or contact us directly.'
+      );
+    }
+  }
   return (
     <section id="contact" className="bg-gray-100">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
@@ -123,7 +165,7 @@ export default function Contact() {
 
               {/* Contact form */}
               <div className="bg-white p-6 rounded-xl shadow-sm">
-                <form className="space-y-6">
+                <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"
@@ -135,7 +177,9 @@ export default function Contact() {
                       type="text"
                       id="name"
                       name="name"
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      required
+                      disabled={isSubmitting}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
                       placeholder="Your name"
                     />
                   </div>
@@ -151,7 +195,9 @@ export default function Contact() {
                       type="email"
                       id="email"
                       name="email"
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      required
+                      disabled={isSubmitting}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
                       placeholder="your@email.com"
                     />
                   </div>
@@ -167,17 +213,32 @@ export default function Contact() {
                       id="message"
                       name="message"
                       rows={4}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
+                      required
+                      disabled={isSubmitting}
+                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
                       placeholder="Tell us about your project..."
                     />
                   </div>
 
+                  {submitMessage && (
+                    <div
+                      className={`p-4 rounded-md ${
+                        submitMessage.includes('Thank you') ?
+                          'bg-green-50 text-green-800 border border-green-200'
+                        : 'bg-red-50 text-red-800 border border-red-200'
+                      }`}
+                    >
+                      {submitMessage}
+                    </div>
+                  )}
+
                   <div>
                     <button
                       type="submit"
-                      className="w-full btn bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                      disabled={isSubmitting}
+                      className="w-full btn bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
                     >
-                      Send Message
+                      {isSubmitting ? 'Sending...' : 'Send Message'}
                     </button>
                   </div>
                 </form>

@@ -1,11 +1,11 @@
 export default function Services() {
   return (
-    <section id="services" className="bg-jfm-section">
+    <section id="services" className="bg-gray-50">
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-12 md:py-20">
           {/* Section header */}
           <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
-            <h2 className="text-3xl font-bold text-jfm-heading md:text-4xl">
+            <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">
               Our Services
             </h2>
             <p className="text-lg text-gray-600 mt-4">
@@ -19,7 +19,7 @@ export default function Services() {
             {/* Service 1 */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-jfm-tech-blue text-white">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
                   <svg
                     className="h-6 w-6"
                     fill="none"
@@ -35,7 +35,7 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-jfm-heading">
+              <h3 className="mb-2 text-lg font-semibold text-gray-800">
                 Web Development
               </h3>
               <p className="text-gray-600 flex-grow">
@@ -47,7 +47,7 @@ export default function Services() {
             {/* Service 2 */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-jfm-tech-blue text-white">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
                   <svg
                     className="h-6 w-6"
                     fill="none"
@@ -63,7 +63,7 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-jfm-heading">
+              <h3 className="mb-2 text-lg font-semibold text-gray-800">
                 Front-end Engineering & Accessibility
               </h3>
               <p className="text-gray-600 flex-grow">
@@ -75,7 +75,7 @@ export default function Services() {
             {/* Service 3 */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-jfm-tech-blue text-white">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
                   <svg
                     className="h-6 w-6"
                     fill="none"
@@ -91,7 +91,7 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-jfm-heading">
+              <h3 className="mb-2 text-lg font-semibold text-gray-800">
                 Site Audits & Performance
               </h3>
               <p className="text-gray-600 flex-grow">
@@ -103,7 +103,7 @@ export default function Services() {
             {/* Service 4 */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
-                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-jfm-tech-blue text-white">
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
                   <svg
                     className="h-6 w-6"
                     fill="none"
@@ -119,7 +119,7 @@ export default function Services() {
                   </svg>
                 </div>
               </div>
-              <h3 className="mb-2 text-lg font-semibold text-jfm-heading">
+              <h3 className="mb-2 text-lg font-semibold text-gray-800">
                 AI-Powered Workflows
               </h3>
               <p className="text-gray-600 flex-grow">

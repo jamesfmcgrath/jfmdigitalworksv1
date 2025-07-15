@@ -37,7 +37,7 @@ export default function CaseStudies() {
                   </div>
                 </div>
                 <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                  LocalGov Drupal Accessibility Overhaul
+                  Drupal Accessibility Overhaul
                 </h3>
                 <p className="text-gray-600 mb-4">
                   Comprehensive accessibility audit and implementation for a
