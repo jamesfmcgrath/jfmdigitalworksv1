@@ -1,91 +1,204 @@
-# Free Tailwind landing page template
+# JFM Digital Works
 
-![Simple TailwindCSS template preview](https://github.com/cruip/tailwind-landing-page-template/assets/2683512/f9a98fab-a1bc-4fb5-8572-4de0b6bd932a)
+> **Secure, Accessible Web Solutions**
+> Modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.
 
-**Simple Light** is a free landing page template built on top of **TailwindCSS** and fully coded in **React** / **Next.js**. Simple light is designed to provide all the basic components a developer need to create a landing page for SaaS products, online services, and more.
+![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black?style=flat-square&logo=next.js)
+![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat-square&logo=react)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat-square&logo=typescript)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0.3-06B6D4?style=flat-square&logo=tailwindcss)
 
-**UPDATE 2025-02-04** Added Tailwind v4 support!
-
-Use it for whatever you want, and be sure to reach us out on X if you build anything cool/useful with it.
-Created and maintained with ❤️ by [Cruip.com](https://cruip.com/).
-
-_Version 1.3.3 built with Tailwind CSS and React + Vite is available [here](https://github.com/cruip/tailwind-landing-page-template/releases/tag/1.3.3)._
-
-## Live demo
-
-Check the live demo here 👉️ [https://simple.cruip.com/](https://simple.cruip.com/)
-
-## Simple Pro
-
-[![Simple Pro](https://github.com/cruip/tailwind-landing-page-template/assets/2683512/992be2ba-3de7-4838-be41-12e85686c193)](https://cruip.com/)
-
-## Design files
-
-If you need the design files, you can download them from Figma's Community 👉 https://bit.ly/3HOZMpf
-
-## Usage
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-### Getting Started
-
-First, run the development server:
+## 🚀 Quick Start
 
 ```bash
+# Clone the repository
+git clone https://github.com/jamesfmcgrath/jfmdigitalworksv1.git
+
+# Navigate to project directory
+cd jfmdigitalworksv1
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+- **Framework**: [Next.js 15.1.6](https://nextjs.org/) with App Router
+- **Language**: [TypeScript 5.7.3](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS 4.0.3](https://tailwindcss.com/)
+- **Animations**: [AOS (Animate On Scroll) 3.0.0-beta.6](https://michalsnik.github.io/aos/)
+- **Forms**: [Web3Forms API](https://web3forms.com/) integration
+- **UI Components**: [Headless UI](https://headlessui.com/)
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
+jfmdigitalworksv1/
+├── app/
+│   ├── (auth)/                 # Authentication pages
+│   │   ├── layout.tsx
+│   │   ├── signin/
+│   │   ├── signup/
+│   │   └── reset-password/
+│   ├── (default)/              # Main application
+│   │   ├── layout.tsx
+│   │   └── page.tsx
+│   ├── api/                    # API routes
+│   ├── css/                    # Global styles
+│   │   ├── style.css
+│   │   ├── jfm-brand.css      # Brand-specific styles
+│   │   └── additional-styles/
+│   └── layout.tsx
+├── components/                 # React components
+│   ├── ui/                     # UI components
+│   │   ├── header.tsx
+│   │   ├── footer.tsx
+│   │   └── logo.tsx
+│   ├── hero-home.tsx
+│   ├── services.tsx
+│   ├── case-studies.tsx
+│   └── contact.tsx
+├── public/                     # Static assets
+│   └── images/
+├── next.config.js
+├── tailwind.config.js
+└── package.json
+```
 
-### Learn More
+## ✨ Features
 
-To learn more about Next.js, take a look at the following resources:
+### 🎨 **Design System**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Custom Brand Colors**: Professional blue-gray palette with JFM branding
+- **Responsive Typography**: Mobile-first design with custom scaling
+- **Brand Consistency**: Dedicated `jfm-brand.css` for brand-specific styles
+- **Smooth Animations**: AOS library for scroll-triggered animations
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 🔒 **Security & Performance**
 
-### Deploy on Vercel
+- **Environment Variables**: Secure API key management
+- **Performance Optimized**: Next.js 15 optimizations, image formats (WebP/AVIF)
+- **Bundle Optimization**: Package import optimization and compression
+- **Contact Form Security**: Web3Forms integration with validation
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 📱 **User Experience**
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- **Mobile-First Design**: Responsive across all devices
+- **Accessibility**: WCAG compliant with proper ARIA labels
+- **SEO Optimized**: Comprehensive metadata and Open Graph tags
+- **Fast Loading**: Optimized images and lazy loading
 
-### Support notes
+## 🔧 Development
 
-This template has been developed with the App Router (`app`) and React Server Components. If you’re unfamiliar with these beta features, you can find more information about them on the Next.js beta documentation page. So, please note that any request dealing with React (e.g. extra features, customisations, et cetera) is to be considered out of the support scope.
+### Available Scripts
 
-For more information about what support covers, please see our (FAQs)[https://cruip.com/faq/].
+```bash
+# Development with Turbopack
+npm run dev
 
-## Credits
+# Production build
+npm run build
 
-- [Nucleo](https://nucleoapp.com/)
+# Start production server
+npm start
 
-## Terms and License
+# Lint code
+npm run lint
+```
 
-- Released under the [GPL](https://www.gnu.org/licenses/gpl-3.0.html).
-- Copyright 2024 [Cruip](https://cruip.com/).
-- Use it for personal and commercial projects, but please don’t republish, redistribute, or resell the template.
-- Attribution is not required, although it is really appreciated.
+### Environment Variables
 
-## About Us
+Create a `.env.local` file in the root directory:
 
-We're an Italian developer/designer duo creating high-quality design/code resources for developers, makers, and startups.
+```env
+# Web3Forms Configuration
+NEXT_PUBLIC_WEB3FORMS_KEY=your_web3forms_access_key
 
-## Stay in the loop
+# Get your free access key from https://web3forms.com/
+```
 
-If you would like to know when we release new resources, you can follow [@pacovitiello](https://x.com/pacovitiello) and [@DavidePacilio](https://x.com/DavidePacilio) on X, or you can subscribe to our [newsletter](https://cruip.com/newsletter/).
+### Component Development
 
+Components are organized by functionality:
+
+- **UI Components** (`components/ui/`): Reusable UI elements
+- **Feature Components** (`components/`): Page-specific components
+- **Layout Components** (`app/`): App-wide layouts
+
+## 🎨 Brand System
+
+### Color Palette
+
+```css
+/* Primary Colors */
+--color-jfm-primary: #1e293b; /* Slate 800 */
+--color-jfm-secondary: #475569; /* Slate 600 */
+--color-jfm-accent: #3b82f6; /* Blue 500 */
+
+/* Background Colors */
+--color-jfm-bg-primary: #ffffff;
+--color-jfm-bg-secondary: #f8fafc;
+--color-jfm-bg-accent: #f1f5f9;
+```
+
+### Typography
+
+- **Primary Font**: Inter (sans-serif)
+- **Monospace Font**: Roboto Mono
+- **Responsive Scaling**: Custom CSS variables for mobile-first typography
+
+## 🌐 Deployment
+
+### Vercel (Recommended)
+
+1. Connect your GitHub repository to Vercel
+2. Add environment variables in Vercel dashboard:
+   - `NEXT_PUBLIC_WEB3FORMS_KEY`
+3. Deploy automatically on push to main branch
+
+### Manual Deployment
+
+```bash
+# Build the application
+npm run build
+
+# Start production server
+npm start
+```
+
+## 📊 Performance Optimizations
+
+- **Next.js 15 Features**: App Router, React Server Components
+- **Image Optimization**: WebP/AVIF formats with 1-year cache
+- **Bundle Optimization**: Package import optimization
+- **Gzip Compression**: Enabled for smaller file sizes
+- **Performance Monitoring**: Core Web Vitals optimized
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📧 Contact
+
+**James McGrath**
+JFM Digital Works
+Email: [Contact Form](https://jfmdigitalworks.com/#contact)
+Website: [jfmdigitalworks.com](https://jfmdigitalworks.com)
+
+## 📄 License
+
+This project is proprietary software. All rights reserved.
+
+---
+
+**Built with ❤️ by JFM Digital Works**
+_Secure, Accessible Web Solutions_
