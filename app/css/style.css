@@ -1,5 +1,8 @@
 @import 'tailwindcss';
 
+/* JFM Digital Works Brand Styles */
+@import './jfm-brand.css';
+
 /* Additional styles */
 @import './additional-styles/utility-patterns.css' layer(components);
 @import './additional-styles/theme.css';
