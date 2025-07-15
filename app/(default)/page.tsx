@@ -1,22 +1,21 @@
 export const metadata = {
-  title: "Home - Simple",
-  description: "Page description",
+  title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+  description:
+    'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
 };
 
-import Hero from "@/components/hero-home";
-import BusinessCategories from "@/components/business-categories";
-import FeaturesPlanet from "@/components/features-planet";
-import LargeTestimonial from "@/components/large-testimonial";
-import Cta from "@/components/cta";
+import CaseStudies from '@/components/case-studies';
+import Contact from '@/components/contact';
+import Hero from '@/components/hero-home';
+import Services from '@/components/services';
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <BusinessCategories />
-      <FeaturesPlanet />
-      <LargeTestimonial />
-      <Cta />
+      <Services />
+      <CaseStudies />
+      <Contact />
     </>
   );
 }

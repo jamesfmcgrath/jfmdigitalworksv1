@@ -1,11 +1,11 @@
-import Image from "next/image";
-import PageIllustration from "@/components/page-illustration";
-import Avatar01 from "@/public/images/avatar-01.jpg";
-import Avatar02 from "@/public/images/avatar-02.jpg";
-import Avatar03 from "@/public/images/avatar-03.jpg";
-import Avatar04 from "@/public/images/avatar-04.jpg";
-import Avatar05 from "@/public/images/avatar-05.jpg";
-import Avatar06 from "@/public/images/avatar-06.jpg";
+import PageIllustration from '@/components/page-illustration';
+import Avatar01 from '@/public/images/avatar-01.jpg';
+import Avatar02 from '@/public/images/avatar-02.jpg';
+import Avatar03 from '@/public/images/avatar-03.jpg';
+import Avatar04 from '@/public/images/avatar-04.jpg';
+import Avatar05 from '@/public/images/avatar-05.jpg';
+import Avatar06 from '@/public/images/avatar-06.jpg';
+import Image from 'next/image';
 
 export default function HeroHome() {
   return (
@@ -70,8 +70,8 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              The website builder you're <br className="max-lg:hidden" />
-              looking for
+              Modern, secure web solutions <br className="max-lg:hidden" />
+              for a digital-first world
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
@@ -79,8 +79,11 @@ export default function HeroHome() {
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Simple is a modern website builder powered by AI that changes
-                how companies create user interfaces together.
+                JFM Digital Works is a modern, security-first web consultancy
+                focused on building accessible, performant, and cloud-native
+                digital experiences. We specialize in creating high-quality web
+                applications that prioritize user experience and security,
+                serving clients in Ireland and across the EU.
               </p>
               <div className="relative before:absolute before:inset-0 before:border-y before:[border-image:linear-gradient(to_right,transparent,--theme(--color-slate-300/.8),transparent)1]">
                 <div
@@ -90,10 +93,10 @@ export default function HeroHome() {
                 >
                   <a
                     className="btn group mb-4 w-full bg-linear-to-t from-blue-600 to-blue-500 bg-[length:100%_100%] bg-[bottom] text-white shadow-sm hover:bg-[length:100%_150%] sm:mb-0 sm:w-auto"
-                    href="#0"
+                    href="mailto:info@jfmdigitalworks.com"
                   >
                     <span className="relative inline-flex items-center">
-                      Start Free Trial{" "}
+                      Get In Touch{' '}
                       <span className="ml-1 tracking-normal text-blue-300 transition-transform group-hover:translate-x-0.5">
                         -&gt;
                       </span>
@@ -101,9 +104,9 @@ export default function HeroHome() {
                   </a>
                   <a
                     className="btn w-full bg-white text-gray-800 shadow-sm hover:bg-gray-50 sm:ml-4 sm:w-auto"
-                    href="#0"
+                    href="#services"
                   >
-                    Learn More
+                    Our Services
                   </a>
                 </div>
               </div>
@@ -124,14 +127,14 @@ export default function HeroHome() {
               <div className="font-mono text-gray-500 [&_span]:opacity-0">
                 <span className="animate-[code-1_10s_infinite] text-gray-200">
                   npm login
-                </span>{" "}
+                </span>{' '}
                 <span className="animate-[code-2_10s_infinite]">
                   --registry=https://npm.pkg.github.com
                 </span>
                 <br />
                 <span className="animate-[code-3_10s_infinite]">
                   --scope=@phanatic
-                </span>{" "}
+                </span>{' '}
                 <span className="animate-[code-4_10s_infinite]">
                   Successfully logged-in.
                 </span>

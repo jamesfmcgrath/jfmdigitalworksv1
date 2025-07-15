@@ -1,5 +1,4 @@
-import Link from "next/link";
-import Logo from "./logo";
+import Logo from './logo';
 
 export default function Header() {
   return (
@@ -11,25 +10,35 @@ export default function Header() {
             <Logo />
           </div>
 
-          {/* Desktop sign in links */}
-          <ul className="flex flex-1 items-center justify-end gap-3">
-            <li>
-              <Link
-                href="/signin"
-                className="btn-sm bg-white text-gray-800 shadow-sm hover:bg-gray-50"
-              >
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/signup"
-                className="btn-sm bg-gray-800 text-gray-200 shadow-sm hover:bg-gray-900"
-              >
-                Register
-              </Link>
-            </li>
-          </ul>
+          {/* Navigation */}
+          <nav className="flex flex-1 items-center justify-end">
+            <ul className="flex items-center gap-6">
+              <li>
+                <a
+                  href="#services"
+                  className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#work"
+                  className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                >
+                  Work
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#contact"
+                  className="btn-sm bg-blue-500 text-white hover:bg-blue-600 transition-colors"
+                >
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
         </div>
       </div>
     </header>
