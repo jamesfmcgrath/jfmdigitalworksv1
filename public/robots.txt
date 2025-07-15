@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Security
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap
+Sitemap: https://jfmdigitalworks.com/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1

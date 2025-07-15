@@ -69,8 +69,20 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth" suppressHydrationWarning={true}>
       <head>
-        <meta name="theme-color" content="#0f172a" />
+        <meta name="theme-color" content="#6366f1" />
         <meta name="color-scheme" content="light dark" />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="JFM Digital Works" />
+        <link rel="apple-touch-icon" href="/images/logo-192.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192.png" />
+        <link rel="icon" type="image/png" sizes="512x512" href="/images/logo-512.png" />
+        <meta name="msapplication-TileImage" content="/images/logo-512.png" />
+        <meta name="msapplication-TileColor" content="#6366f1" />
+        <link rel="preconnect" href="https://api.web3forms.com" />
+        <link rel="dns-prefetch" href="https://api.web3forms.com" />
       </head>
       <body
         className={`${inter.variable} ${firaCode.variable} bg-gray-100 font-inter tracking-tight text-gray-800 antialiased`}

@@ -2,44 +2,151 @@
 
 import { useState } from 'react';
 
+// Email validation function
+const validateEmail = (email: string): boolean => {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+};
+
+// Spam detection functions
+const isLikelySpam = (message: string): boolean => {
+  const spamKeywords = [
+    'viagra', 'casino', 'lottery', 'winner', 'congratulations', 'click here',
+    'free money', 'guaranteed', 'act now', 'limited time', 'no obligation',
+    'risk free', 'credit card', 'loan', 'debt', 'weight loss', 'pharmacy',
+    'prescription', 'supplements', 'bitcoin', 'cryptocurrency', 'investment',
+    'trading', 'profit', 'earn money', 'work from home', 'mlm', 'pyramid'
+  ];
+  
+  const lowerMessage = message.toLowerCase();
+  return spamKeywords.some(keyword => lowerMessage.includes(keyword));
+};
+
+const hasExcessiveLinks = (message: string): boolean => {
+  const linkRegex = /https?:\/\/[^\s]+/g;
+  const links = message.match(linkRegex);
+  return links ? links.length > 2 : false;
+};
+
+const hasSuspiciousPatterns = (message: string): boolean => {
+  // Check for excessive repetition
+  const words = message.toLowerCase().split(/\s+/);
+  const wordCount = words.reduce((acc, word) => {
+    acc[word] = (acc[word] || 0) + 1;
+    return acc;
+  }, {} as Record<string, number>);
+  
+  const hasExcessiveRepetition = Object.values(wordCount).some(count => count > 5);
+  
+  // Check for suspicious patterns
+  const suspiciousPatterns = [
+    /(.)\1{4,}/g, // Repeated characters
+    /[A-Z]{10,}/g, // Too many capitals
+    /\d{10,}/g, // Too many numbers
+  ];
+  
+  return hasExcessiveRepetition || suspiciousPatterns.some(pattern => pattern.test(message));
+};
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
+  const [lastSubmission, setLastSubmission] = useState<number>(0);
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
 
-    const formData = new FormData(e.currentTarget);
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify({
-        access_key:
-          process.env.NEXT_PUBLIC_WEB3FORMS_KEY || 'YOUR_ACCESS_KEY_HERE',
-        name: formData.get('name'),
-        email: formData.get('email'),
-        message: formData.get('message'),
-      }),
-    });
-
-    const result = await response.json();
-    setIsSubmitting(false);
-
-    if (result.success) {
-      setSubmitMessage(
-        "Thank you for your message! We'll get back to you soon."
-      );
-      (e.target as HTMLFormElement).reset();
-    } else {
-      setSubmitMessage(
-        'Something went wrong. Please try again or contact us directly.'
-      );
+    const now = Date.now();
+    
+    // Rate limiting: prevent submissions within 30 seconds
+    if (now - lastSubmission < 30000) {
+      setSubmitMessage('Please wait before submitting another message.');
+      setIsSubmitting(false);
+      return;
     }
+
+    const formData = new FormData(e.currentTarget);
+    
+    // Check for honeypot fields
+    if (formData.get('botcheck') || formData.get('website')) {
+      setSubmitMessage('Spam detected. Please try again.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Enhanced spam detection
+    const email = formData.get('email') as string;
+    const message = formData.get('message') as string;
+    const name = formData.get('name') as string;
+
+    // Validate email format
+    if (!validateEmail(email)) {
+      setSubmitMessage('Please enter a valid email address.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Check for spam patterns
+    if (isLikelySpam(message) || hasExcessiveLinks(message) || hasSuspiciousPatterns(message)) {
+      setSubmitMessage('Your message appears to be spam. Please try again with a different message.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Check for suspicious name patterns
+    if (name.length < 2 || name.length > 50 || /[0-9]/.test(name)) {
+      setSubmitMessage('Please enter a valid name.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Check if Web3Forms API key is configured
+    if (!process.env.NEXT_PUBLIC_WEB3FORMS_KEY) {
+      setSubmitMessage('Contact form is not properly configured. Please try again later.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Add additional metadata for spam protection
+    const submissionData = {
+      access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+      name,
+      email,
+      message,
+      subject: 'New Contact Form Submission from JFM Digital Works',
+      from_name: 'JFM Digital Works Contact Form',
+      timestamp: new Date().toISOString(),
+      user_agent: navigator.userAgent,
+      referrer: document.referrer || 'direct',
+    };
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(submissionData),
+      });
+
+      const result = await response.json();
+      
+      if (response.ok && result.success) {
+        setSubmitMessage("Thank you for your message! We'll get back to you soon.");
+        (e.target as HTMLFormElement).reset();
+        setLastSubmission(now);
+      } else {
+        setSubmitMessage('Something went wrong. Please try again or contact us directly.');
+      }
+    } catch (error) {
+      console.error('Form submission error:', error);
+      setSubmitMessage('Network error. Please check your connection and try again.');
+    }
+    
+    setIsSubmitting(false);
   }
   return (
     <section id="contact" className="bg-gray-100">
@@ -166,6 +273,22 @@ export default function Contact() {
               {/* Contact form */}
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot fields for spam protection - must be hidden */}
+                  <input
+                    type="checkbox"
+                    name="botcheck"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                  <input
+                    type="text"
+                    name="website"
+                    className="hidden"
+                    tabIndex={-1}
+                    autoComplete="off"
+                  />
+                  
                   <div>
                     <label
                       htmlFor="name"

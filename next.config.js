@@ -19,8 +19,9 @@ const nextConfig = {
 
   // Performance optimizations
   poweredByHeader: false,
-
-  // Output optimization
+  generateEtags: true,
+  
+  // PWA support
   output: 'standalone',
 
   // Security headers
@@ -50,8 +51,46 @@ const nextConfig = {
             value: 'origin-when-cross-origin',
           },
           {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://api.web3forms.com; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;",
+          },
+          {
             key: 'Permissions-Policy',
-            value: 'camera=(), microphone=(), geolocation=()',
+            value: 'camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()',
+          },
+        ],
+      },
+      {
+        source: '/manifest.json',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/manifest+json',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/sw.js',
+        headers: [
+          {
+            key: 'Content-Type',
+            value: 'application/javascript; charset=utf-8',
+          },
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=0, must-revalidate',
+          },
+          {
+            key: 'Service-Worker-Allowed',
+            value: '/',
           },
         ],
       },
@@ -76,12 +115,17 @@ const nextConfig = {
     ];
   },
 
-  // Bundle analyzer (optional)
+  // Bundle analyzer and optimizations
   webpack: (config, { isServer, dev }) => {
+    // Client-side optimizations
     if (!isServer) {
       config.resolve.fallback = {
         ...config.resolve.fallback,
         fs: false,
+        path: false,
+        crypto: false,
+        stream: false,
+        util: false,
       };
     }
 
@@ -94,6 +138,12 @@ const nextConfig = {
             test: /[\\/]node_modules[\\/]/,
             name: 'vendors',
             chunks: 'all',
+          },
+          common: {
+            name: 'common',
+            minChunks: 2,
+            priority: 5,
+            reuseExistingChunk: true,
           },
         },
       };
