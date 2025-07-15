@@ -43,32 +43,38 @@ self.addEventListener('fetch', (event) => {
 
       // Clone the request for fetch
       const fetchRequest = event.request.clone();
-      
-      return fetch(fetchRequest).then((response) => {
-        // Check if we received a valid response
-        if (!response || response.status !== 200 || response.type !== 'basic') {
-          return response;
-        }
 
-        // Clone the response for caching
-        const responseToCache = response.clone();
-
-        caches.open(CACHE_NAME).then((cache) => {
-          // Only cache GET requests
-          if (event.request.method === 'GET') {
-            cache.put(event.request, responseToCache);
+      return fetch(fetchRequest)
+        .then((response) => {
+          // Check if we received a valid response
+          if (
+            !response ||
+            response.status !== 200 ||
+            response.type !== 'basic'
+          ) {
+            return response;
           }
-        });
 
-        return response;
-      }).catch((error) => {
-        console.log('Fetch failed:', error);
-        // Return offline page for navigation requests
-        if (event.request.mode === 'navigate') {
-          return caches.match('/');
-        }
-        return new Response('Network error', { status: 408 });
-      });
+          // Clone the response for caching
+          const responseToCache = response.clone();
+
+          caches.open(CACHE_NAME).then((cache) => {
+            // Only cache GET requests
+            if (event.request.method === 'GET') {
+              cache.put(event.request, responseToCache);
+            }
+          });
+
+          return response;
+        })
+        .catch((error) => {
+          console.log('Fetch failed:', error);
+          // Return offline page for navigation requests
+          if (event.request.mode === 'navigate') {
+            return caches.match('/');
+          }
+          return new Response('Network error', { status: 408 });
+        });
     })
   );
 });
