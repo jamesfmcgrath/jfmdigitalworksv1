@@ -4,8 +4,8 @@ export const metadata = {
     'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
 };
 
-import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
+import { Suspense } from 'react';
 
 // Server-side components
 import Hero from '@/components/hero-home';
@@ -23,9 +23,12 @@ const Contact = dynamic(() => import('@/components/contact'), {
   loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
 });
 
-const ClientOnlyComponents = dynamic(() => import('@/components/client-only-components'), {
-  loading: () => null,
-});
+const ClientOnlyComponents = dynamic(
+  () => import('@/components/client-only-components'),
+  {
+    loading: () => null,
+  }
+);
 
 export default function Home() {
   return (
