@@ -3,10 +3,9 @@ const urlsToCache = [
   '/',
   '/manifest.json',
   '/favicon.ico',
-  '/images/logo-192.png',
-  '/images/logo-512.png',
+  '/images/android-chrome-192x192.png',
+  '/images/android-chrome-512x512.png',
   '/images/planet.png',
-  '/css/style.css',
 ];
 
 // Install event
