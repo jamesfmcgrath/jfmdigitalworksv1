@@ -76,20 +76,20 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="JFM Digital Works" />
-        <link rel="apple-touch-icon" href="/images/logo-192.png" />
+        <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
         <link
           rel="icon"
           type="image/png"
           sizes="192x192"
-          href="/images/logo-192.png"
+          href="/images/android-chrome-192x192.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="512x512"
-          href="/images/logo-512.png"
+          href="/images/android-chrome-512x512.png"
         />
-        <meta name="msapplication-TileImage" content="/images/logo-512.png" />
+        <meta name="msapplication-TileImage" content="/images/android-chrome-512x512.png" />
         <meta name="msapplication-TileColor" content="#6366f1" />
         <link rel="preconnect" href="https://api.web3forms.com" />
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
