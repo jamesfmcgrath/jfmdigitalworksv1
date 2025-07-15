@@ -6,7 +6,11 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lighthouse": "lighthouse http://localhost:3000 --output=json --output-path=./lighthouse-report.json",
+    "lighthouse:ci": "lhci autorun",
+    "audit": "npm audit --production",
+    "analyze": "ANALYZE=true npm run build"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.0",

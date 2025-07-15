@@ -4,18 +4,43 @@ export const metadata = {
     'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
 };
 
-import CaseStudies from '@/components/case-studies';
-import Contact from '@/components/contact';
+import { Suspense } from 'react';
+import dynamic from 'next/dynamic';
+
+// Server-side components
 import Hero from '@/components/hero-home';
-import Services from '@/components/services';
+
+// Client-side components with dynamic loading
+const Services = dynamic(() => import('@/components/services'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+});
+
+const CaseStudies = dynamic(() => import('@/components/case-studies'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+});
+
+const Contact = dynamic(() => import('@/components/contact'), {
+  loading: () => <div className="h-96 bg-gray-100 animate-pulse" />,
+});
+
+const ClientOnlyComponents = dynamic(() => import('@/components/client-only-components'), {
+  loading: () => null,
+});
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <Services />
-      <CaseStudies />
-      <Contact />
+      <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse" />}>
+        <Services />
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse" />}>
+        <CaseStudies />
+      </Suspense>
+      <Suspense fallback={<div className="h-96 bg-gray-100 animate-pulse" />}>
+        <Contact />
+      </Suspense>
+      <ClientOnlyComponents />
     </>
   );
 }
