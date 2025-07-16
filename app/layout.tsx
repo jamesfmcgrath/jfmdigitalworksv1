@@ -1,5 +1,6 @@
 import './css/style.css';
 
+import SimpleAnalytics from '@/components/simple-analytics';
 import { Fira_Code, Inter } from 'next/font/google';
 import { Suspense } from 'react';
 
@@ -88,10 +89,27 @@ export default function RootLayout({
           sizes="512x512"
           href="/images/android-chrome-512x512.png"
         />
-        <meta name="msapplication-TileImage" content="/images/android-chrome-512x512.png" />
+        <meta
+          name="msapplication-TileImage"
+          content="/images/android-chrome-512x512.png"
+        />
         <meta name="msapplication-TileColor" content="#6366f1" />
         <link rel="preconnect" href="https://api.web3forms.com" />
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
+
+        {/* Simple Analytics - Privacy-focused analytics */}
+        <script
+          async
+          defer
+          src="https://scripts.simpleanalytics.com/latest.js"
+        ></script>
+        <noscript>
+          <img
+            src="https://queue.simpleanalytics.com/noscript.gif"
+            alt=""
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </noscript>
       </head>
       <body
         className={`${inter.variable} ${firaCode.variable} bg-gray-100 font-inter tracking-tight text-gray-800 antialiased`}
@@ -101,6 +119,7 @@ export default function RootLayout({
             {children}
           </div>
         </Suspense>
+        <SimpleAnalytics />
       </body>
     </html>
   );
