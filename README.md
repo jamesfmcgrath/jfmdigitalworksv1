@@ -4,9 +4,29 @@
 > Modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.
 
 ![Next.js](https://img.shields.io/badge/Next.js-15.1.6-black?style=flat-square&logo=next.js)
-![React](https://img.shields.io/badge/React-19.0.0-61DAFB?style=flat-square&logo=react)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat-square&logo=typescript)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0.3-06B6D4?style=flat-square&logo=tailwindcss)
+![React](https://img.shields.io/badge/React-19.0.0-61DAF## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Install dependencies (`pnpm install`)
+4. Make your changes and test locally (`pnpm run dev`)
+5. Run quality checks:
+   - `pnpm run lint` - Check for linting issues
+   - `pnpm run build` - Verify TypeScript compilation
+   - `pnpm run lighthouse` - Test performance
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+### Code Standards
+
+- **TypeScript**: All components must be properly typed
+- **Accessibility**: Follow WCAG guidelines
+- **Performance**: Optimize for Core Web Vitals
+- **Mobile-First**: Design for mobile devices first
+- **Brand Consistency**: Use JFM brand colors and typography=flat-square&logo=react)
+  ![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-3178C6?style=flat-square&logo=typescript)
+  ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-4.0.3-06B6D4?style=flat-square&logo=tailwindcss)
 
 ## 🚀 Quick Start
 
@@ -17,11 +37,11 @@ git clone https://github.com/jamesfmcgrath/jfmdigitalworksv1.git
 # Navigate to project directory
 cd jfmdigitalworksv1
 
-# Install dependencies
-npm install
+# Install dependencies (using pnpm)
+pnpm install
 
 # Start development server
-npm run dev
+pnpm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
@@ -33,7 +53,8 @@ Open [http://localhost:3000](http://localhost:3000) in your browser to see the r
 - **Styling**: [Tailwind CSS 4.0.3](https://tailwindcss.com/)
 - **Animations**: [AOS (Animate On Scroll) 3.0.0-beta.6](https://michalsnik.github.io/aos/)
 - **Forms**: [Web3Forms API](https://web3forms.com/) integration
-- **UI Components**: [Headless UI](https://headlessui.com/)
+- **UI Components**: [Headless UI 2.2.0](https://headlessui.com/)
+- **Package Manager**: [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
 
 ## 📁 Project Structure
 
@@ -49,25 +70,64 @@ jfmdigitalworksv1/
 │   │   ├── layout.tsx
 │   │   └── page.tsx
 │   ├── api/                    # API routes
+│   │   └── hello/
+│   │       └── route.ts
 │   ├── css/                    # Global styles
 │   │   ├── style.css
+│   │   ├── critical.css
 │   │   ├── jfm-brand.css      # Brand-specific styles
 │   │   └── additional-styles/
-│   └── layout.tsx
+│   │       ├── custom-fonts.css
+│   │       ├── theme.css
+│   │       └── utility-patterns.css
+│   ├── layout.tsx              # Root layout
+│   ├── loading.tsx             # Global loading component
+│   └── not-found.tsx           # 404 page
 ├── components/                 # React components
 │   ├── ui/                     # UI components
 │   │   ├── header.tsx
 │   │   ├── footer.tsx
+│   │   ├── footer-logo.tsx
 │   │   └── logo.tsx
-│   ├── hero-home.tsx
-│   ├── services.tsx
+│   ├── accordion.tsx
+│   ├── banner.tsx
+│   ├── business-categories.tsx
 │   ├── case-studies.tsx
-│   └── contact.tsx
+│   ├── client-only-components.tsx
+│   ├── contact.tsx
+│   ├── cta.tsx
+│   ├── features-planet.tsx
+│   ├── hero-home.tsx
+│   ├── large-testimonial.tsx
+│   ├── optimized-image.tsx
+│   ├── page-illustration.tsx
+│   ├── performance-monitor.tsx
+│   ├── service-worker-registration.tsx
+│   └── services.tsx
 ├── public/                     # Static assets
-│   └── images/
+│   ├── images/
+│   │   ├── android-chrome-192x192.png
+│   │   ├── android-chrome-512x512.png
+│   │   ├── apple-touch-icon.png
+│   │   ├── favicon-16x16.png
+│   │   ├── favicon-32x32.png
+│   │   ├── logo-192.png
+│   │   ├── logo-512.png
+│   │   └── [other optimized images]
+│   ├── favicon.ico
+│   ├── manifest.json
+│   ├── robots.txt
+│   ├── sitemap.xml
+│   └── sw.js                   # Service worker
+├── .gitignore
+├── CHANGELOG.md
+├── lighthouserc.json          # Lighthouse CI config
 ├── next.config.js
+├── package.json
+├── pnpm-lock.yaml
+├── postcss.config.js
 ├── tailwind.config.js
-└── package.json
+└── tsconfig.json
 ```
 
 ## ✨ Features
@@ -99,16 +159,28 @@ jfmdigitalworksv1/
 
 ```bash
 # Development with Turbopack
-npm run dev
+pnpm run dev
 
 # Production build
-npm run build
+pnpm run build
 
 # Start production server
-npm start
+pnpm start
 
 # Lint code
-npm run lint
+pnpm run lint
+
+# Run Lighthouse audit
+pnpm run lighthouse
+
+# Run Lighthouse CI
+pnpm run lighthouse:ci
+
+# Security audit
+pnpm run audit
+
+# Bundle analysis
+pnpm run analyze
 ```
 
 ### Environment Variables
@@ -126,9 +198,41 @@ NEXT_PUBLIC_WEB3FORMS_KEY=your_web3forms_access_key
 
 Components are organized by functionality:
 
-- **UI Components** (`components/ui/`): Reusable UI elements
-- **Feature Components** (`components/`): Page-specific components
-- **Layout Components** (`app/`): App-wide layouts
+- **UI Components** (`components/ui/`): Reusable UI elements (Header, Footer, Logo, Footer Logo)
+- **Feature Components** (`components/`): Page-specific components including:
+  - `hero-home.tsx` - Homepage hero section
+  - `services.tsx` - Services showcase
+  - `case-studies.tsx` - Client case studies
+  - `contact.tsx` - Contact form
+  - `features-planet.tsx` - Feature highlights
+  - `business-categories.tsx` - Business category display
+  - `large-testimonial.tsx` - Testimonial component
+  - `cta.tsx` - Call-to-action sections
+  - `banner.tsx` - Promotional banners
+  - `accordion.tsx` - Collapsible content
+- **Utility Components**:
+  - `optimized-image.tsx` - Image optimization wrapper
+  - `performance-monitor.tsx` - Performance tracking
+  - `service-worker-registration.tsx` - PWA functionality
+  - `client-only-components.tsx` - Client-side only components
+- **Layout Components** (`app/`): App-wide layouts and page components
+
+### Development Workflow
+
+1. **Component Creation**: Create TypeScript components with proper typing
+2. **Styling**: Use Tailwind CSS classes with custom JFM brand variables
+3. **State Management**: Use React hooks for local state
+4. **Form Handling**: Integrate with Web3Forms API for contact forms
+5. **Performance**: Test components with Lighthouse CI
+6. **Quality**: Run linting and type checking before commits
+
+### Development Tools
+
+- **Package Manager**: pnpm for fast, efficient dependency management
+- **TypeScript**: Strict type checking for better code quality
+- **Tailwind CSS**: Utility-first CSS framework with brand customization
+- **Turbopack**: Fast bundler for development
+- **Lighthouse CI**: Automated performance testing
 
 ## 🎨 Brand System
 
@@ -165,10 +269,10 @@ Components are organized by functionality:
 
 ```bash
 # Build the application
-npm run build
+pnpm run build
 
 # Start production server
-npm start
+pnpm start
 ```
 
 ## 📊 Performance Optimizations
@@ -203,18 +307,56 @@ npm start
 
 ### 📈 Performance Monitoring
 
+The project includes comprehensive performance monitoring:
+
 ```bash
-# Run Lighthouse CI
-npm run lighthouse
+# Run Lighthouse audit
+pnpm run lighthouse
 
-# Performance audit
-npm run audit
+# Run Lighthouse CI for continuous monitoring
+pnpm run lighthouse:ci
 
-# Build analysis
-npm run analyze
+# Security audit
+pnpm run audit
+
+# Bundle analysis
+pnpm run analyze
 ```
 
-## 🤝 Contributing
+**Performance Configuration:**
+
+- **Lighthouse CI**: Configured via `lighthouserc.json` for automated performance testing
+- **Service Worker**: (`sw.js`) Implements caching strategies for offline support
+- **Critical CSS**: (`critical.css`) Above-the-fold styles for faster rendering
+- **Performance Monitor**: Real-time tracking component for Core Web Vitals
+
+## � Testing & Quality Assurance
+
+```bash
+# Type checking (via build)
+pnpm run build
+
+# Linting
+pnpm run lint
+
+# Security audit
+pnpm run audit
+
+# Performance testing
+pnpm run lighthouse
+
+# Bundle analysis
+pnpm run analyze
+```
+
+**Quality Gates:**
+
+- **TypeScript**: Strict type checking with `strict: true`
+- **ESLint**: Next.js recommended linting rules
+- **Lighthouse CI**: Automated performance testing
+- **Security Audits**: Regular dependency vulnerability checks
+
+## �🤝 Contributing
 
 1. Fork the repository
 2. Create a feature branch (`git checkout -b feature/amazing-feature`)
