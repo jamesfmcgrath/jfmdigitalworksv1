@@ -1,7 +1,42 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AccessibleButton from './ui/accessible-button';
+
+// Captcha generation function
+const generateCaptcha = (): { question: string; answer: number } => {
+  const operations = ['+', '-', '*'];
+  const operation = operations[Math.floor(Math.random() * operations.length)];
+
+  let num1: number, num2: number, answer: number;
+
+  switch (operation) {
+    case '+':
+      num1 = Math.floor(Math.random() * 50) + 1;
+      num2 = Math.floor(Math.random() * 50) + 1;
+      answer = num1 + num2;
+      break;
+    case '-':
+      num1 = Math.floor(Math.random() * 50) + 25;
+      num2 = Math.floor(Math.random() * 25) + 1;
+      answer = num1 - num2;
+      break;
+    case '*':
+      num1 = Math.floor(Math.random() * 12) + 1;
+      num2 = Math.floor(Math.random() * 12) + 1;
+      answer = num1 * num2;
+      break;
+    default:
+      num1 = 5;
+      num2 = 3;
+      answer = 8;
+  }
+
+  return {
+    question: `What is ${num1} ${operation} ${num2}?`,
+    answer,
+  };
+};
 
 // Email validation function
 const validateEmail = (email: string): boolean => {
@@ -84,17 +119,44 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [lastSubmission, setLastSubmission] = useState<number>(0);
+  const [captcha, setCaptcha] = useState<{
+    question: string;
+    answer: number;
+  } | null>(null);
+  const [captchaInput, setCaptchaInput] = useState('');
+  const [captchaError, setCaptchaError] = useState('');
+
+  // Generate captcha on component mount
+  useEffect(() => {
+    setCaptcha(generateCaptcha());
+  }, []);
+
+  // Regenerate captcha
+  const regenerateCaptcha = () => {
+    setCaptcha(generateCaptcha());
+    setCaptchaInput('');
+    setCaptchaError('');
+  };
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage('');
+    setCaptchaError('');
 
     const now = Date.now();
 
     // Rate limiting: prevent submissions within 30 seconds
     if (now - lastSubmission < 30000) {
       setSubmitMessage('Please wait before submitting another message.');
+      setIsSubmitting(false);
+      return;
+    }
+
+    // Validate captcha
+    if (!captcha || parseInt(captchaInput) !== captcha.answer) {
+      setCaptchaError('Incorrect answer. Please try again.');
+      regenerateCaptcha();
       setIsSubmitting(false);
       return;
     }
@@ -179,11 +241,14 @@ export default function Contact() {
           "Thank you for your message! We'll get back to you soon."
         );
         (e.target as HTMLFormElement).reset();
+        setCaptchaInput('');
+        regenerateCaptcha();
         setLastSubmission(now);
       } else {
         setSubmitMessage(
           'Something went wrong. Please try again or contact us directly.'
         );
+        regenerateCaptcha();
       }
     } catch (error) {
       console.error('Form submission error:', error);
@@ -414,6 +479,74 @@ export default function Contact() {
                     <p className="mt-1 text-sm text-gray-500" id="message-help">
                       Maximum 2000 characters
                     </p>
+                  </div>
+
+                  {/* Captcha Field */}
+                  <div>
+                    <label
+                      htmlFor="captcha"
+                      className="block text-sm font-medium text-gray-700 mb-1"
+                    >
+                      Security Question{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
+                    </label>
+                    <div className="flex items-center space-x-2">
+                      <div className="flex-1">
+                        <p
+                          className="text-sm text-gray-600 mb-2"
+                          id="captcha-question"
+                        >
+                          {captcha?.question || 'Loading...'}
+                        </p>
+                        <input
+                          type="number"
+                          id="captcha"
+                          name="captcha"
+                          required
+                          disabled={isSubmitting}
+                          value={captchaInput}
+                          onChange={(e) => setCaptchaInput(e.target.value)}
+                          className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
+                          placeholder="Enter your answer"
+                          aria-describedby="captcha-question captcha-error"
+                          aria-invalid={captchaError ? 'true' : 'false'}
+                        />
+                      </div>
+                      <button
+                        type="button"
+                        onClick={regenerateCaptcha}
+                        disabled={isSubmitting}
+                        className="btn-accessible mt-6 px-3 py-2 text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:ring-gray-500 border border-gray-300 rounded-md disabled:opacity-50"
+                        aria-label="Generate new security question"
+                      >
+                        <svg
+                          className="h-4 w-4"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          aria-hidden="true"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+                          />
+                        </svg>
+                        <span className="sr-only">Refresh</span>
+                      </button>
+                    </div>
+                    {captchaError && (
+                      <p
+                        className="mt-1 text-sm text-red-600"
+                        id="captcha-error"
+                        role="alert"
+                      >
+                        {captchaError}
+                      </p>
+                    )}
                   </div>
 
                   {submitMessage && (
