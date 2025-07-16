@@ -262,3 +262,34 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+/* Accessibility: Line Height Enhancements */
+body {
+  line-height: 1.6; /* WCAG AA compliant line height */
+}
+
+p {
+  line-height: 1.6; /* Ensure paragraphs have proper line height */
+}
+
+/* Enhanced line height utilities */
+.line-height-accessible {
+  line-height: 1.6; /* Minimum 1.5 times font size for accessibility */
+}
+
+.line-height-relaxed {
+  line-height: 1.7; /* Extra relaxed for better readability */
+}
+
+/* Interactive element minimum sizes for touch targets */
+.touch-target-enhanced {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+.btn-accessible {
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.75rem 1rem;
+  line-height: 1.5;
+}

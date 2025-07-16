@@ -26,7 +26,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#services"
                 >
                   Web Development
@@ -34,7 +34,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#services"
                 >
                   Accessibility
@@ -42,7 +42,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#services"
                 >
                   Performance Audits
@@ -50,7 +50,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#services"
                 >
                   AI Workflows
@@ -65,7 +65,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
             <ul className="space-y-2 text-sm">
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#work"
                 >
                   Our Work
@@ -73,7 +73,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="#contact"
                 >
                   Contact
@@ -81,7 +81,7 @@ export default function Footer({ border = false }: { border?: boolean }) {
               </li>
               <li>
                 <a
-                  className="text-gray-400 transition hover:text-white"
+                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
                   href="mailto:info@jfmdigitalworks.com"
                 >
                   Email Us

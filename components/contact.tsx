@@ -268,7 +268,7 @@ export default function Contact() {
             <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">
               Get In Touch
             </h2>
-            <p className="text-lg text-gray-600 mt-4">
+            <p className="text-lg text-gray-600 mt-4 line-height-accessible">
               Ready to start your next project? Let's discuss how we can help
               you create modern, secure web solutions.
             </p>
@@ -283,7 +283,7 @@ export default function Contact() {
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">
                     Let's Work Together
                   </h3>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-600 mb-6 line-height-accessible">
                     We're always excited to work on new projects and help
                     businesses create better digital experiences. Whether you
                     need a complete web application, accessibility audit, or
@@ -314,7 +314,7 @@ export default function Contact() {
                       <p className="text-sm font-medium text-gray-800">Email</p>
                       <a
                         href="mailto:info@jfmdigitalworks.com"
-                        className="text-blue-600 hover:text-blue-500"
+                        className="text-blue-600 hover:text-blue-500 touch-target-enhanced inline-block py-2"
                       >
                         info@jfmdigitalworks.com
                       </a>
@@ -385,30 +385,36 @@ export default function Contact() {
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   {/* Honeypot fields for spam protection - must be hidden */}
-                  <input
-                    type="checkbox"
-                    name="botcheck"
-                    className="hidden"
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
-                  <input
-                    type="text"
-                    name="website"
-                    className="hidden"
-                    tabIndex={-1}
-                    autoComplete="off"
-                  />
+                  <div className="hidden">
+                    <label htmlFor="botcheck">
+                      Bot Check (leave unchecked)
+                    </label>
+                    <input
+                      type="checkbox"
+                      id="botcheck"
+                      name="botcheck"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
+                  <div className="hidden">
+                    <label htmlFor="website">Website (leave empty)</label>
+                    <input
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  </div>
 
                   <div>
                     <label
                       htmlFor="name"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Name{' '}
-                      <span className="text-red-500" aria-label="required">
-                        *
-                      </span>
+                      Name <span className="text-red-500">*</span>
+                      <span className="sr-only">required</span>
                     </label>
                     <input
                       type="text"
@@ -431,10 +437,8 @@ export default function Contact() {
                       htmlFor="email"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Email{' '}
-                      <span className="text-red-500" aria-label="required">
-                        *
-                      </span>
+                      Email <span className="text-red-500">*</span>
+                      <span className="sr-only">required</span>
                     </label>
                     <input
                       type="email"
@@ -457,10 +461,8 @@ export default function Contact() {
                       htmlFor="message"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Message{' '}
-                      <span className="text-red-500" aria-label="required">
-                        *
-                      </span>
+                      Message <span className="text-red-500">*</span>
+                      <span className="sr-only">required</span>
                     </label>
                     <textarea
                       id="message"
@@ -487,10 +489,8 @@ export default function Contact() {
                       htmlFor="captcha"
                       className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Security Question{' '}
-                      <span className="text-red-500" aria-label="required">
-                        *
-                      </span>
+                      Security Question <span className="text-red-500">*</span>
+                      <span className="sr-only">required</span>
                     </label>
                     <div className="flex items-center space-x-2">
                       <div className="flex-1">
@@ -518,7 +518,7 @@ export default function Contact() {
                         type="button"
                         onClick={regenerateCaptcha}
                         disabled={isSubmitting}
-                        className="btn-accessible mt-6 px-3 py-2 text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:ring-gray-500 border border-gray-300 rounded-md disabled:opacity-50"
+                        className="btn-accessible touch-target-enhanced mt-6 px-4 py-3 text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:ring-gray-500 border border-gray-300 rounded-md disabled:opacity-50"
                         aria-label="Generate new security question"
                       >
                         <svg
@@ -535,7 +535,9 @@ export default function Contact() {
                             d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                           />
                         </svg>
-                        <span className="sr-only">Refresh</span>
+                        <span className="sr-only">
+                          Generate new security question
+                        </span>
                       </button>
                     </div>
                     {captchaError && (
