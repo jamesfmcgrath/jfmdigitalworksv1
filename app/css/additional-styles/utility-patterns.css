@@ -98,3 +98,28 @@ input[type='search']::-webkit-search-results-decoration {
   @apply ring-2 ring-accessible-blue ring-offset-2;
   @apply outline-none;
 }
+
+/* Terminal text colors for accessibility */
+.terminal-prompt {
+  color: var(--color-terminal-green);
+}
+
+.terminal-command {
+  color: var(--color-terminal-white);
+}
+
+.terminal-info {
+  color: var(--color-terminal-blue);
+}
+
+.terminal-success {
+  color: var(--color-terminal-green);
+}
+
+.terminal-warning {
+  color: var(--color-terminal-yellow);
+}
+
+.terminal-deploy {
+  color: var(--color-terminal-cyan);
+}

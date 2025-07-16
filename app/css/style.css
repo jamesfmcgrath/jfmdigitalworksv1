@@ -45,6 +45,14 @@
   --color-gray-100: #f1f5f9;
   --color-gray-50: #f8fafc;
 
+  /* Terminal colors for accessibility */
+  --color-terminal-green: #00ff00; /* Bright green for prompts */
+  --color-terminal-blue: #3b82f6; /* Blue for info messages */
+  --color-terminal-yellow: #fbbf24; /* Yellow for warnings */
+  --color-terminal-cyan: #06b6d4; /* Cyan for success */
+  --color-terminal-white: #ffffff; /* White for commands */
+  --color-terminal-gray: #9ca3af; /* Gray for secondary text */
+
   --text-xs: 0.75rem;
   --text-xs--line-height: 1.5;
   --text-sm: 0.875rem;
@@ -83,6 +91,8 @@
   --animate-code-4: code-4;
   --animate-code-5: code-5;
   --animate-code-6: code-6;
+  --animate-code-7: code-7;
+  --animate-code-8: code-8;
   --animate-breath: breath;
   --animate-float: float;
   --animate-line: line;
@@ -163,6 +173,34 @@
       opacity: 0;
     }
     83.75% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-7 {
+    85% {
+      opacity: 0;
+    }
+    87.5% {
+      opacity: 1;
+    }
+    97.5% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes code-8 {
+    90% {
+      opacity: 0;
+    }
+    92.5% {
       opacity: 1;
     }
     97.5% {

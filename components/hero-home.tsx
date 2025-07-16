@@ -73,28 +73,35 @@ export default function HeroHome() {
                   jfmdigitalworks.com
                 </span>
               </div>
-              <div className="font-mono text-gray-500 [&_span]:opacity-0">
-                <span className="animate-[code-1_10s_infinite] text-gray-200">
-                  npm run build
+              <div className="font-mono text-gray-400 [&_span]:opacity-0">
+                <span className="animate-[code-1_10s_infinite] terminal-prompt">
+                  ~/projects/jfmdigitalworks $
                 </span>{' '}
-                <span className="animate-[code-2_10s_infinite]">
-                  --production
+                <span className="animate-[code-2_10s_infinite] terminal-command">
+                  pnpm run build
                 </span>
                 <br />
-                <span className="animate-[code-3_10s_infinite]">
+                <span className="animate-[code-3_10s_infinite] terminal-info">
+                  ⚡ Building for production...
+                </span>
+                <br />
+                <span className="animate-[code-4_10s_infinite] terminal-success">
                   ✓ Compiled successfully
                 </span>{' '}
-                <span className="animate-[code-4_10s_infinite]">
+                <span className="animate-[code-5_10s_infinite] terminal-warning">
                   Performance: 98/100
                 </span>
                 <br />
                 <br />
-                <span className="animate-[code-5_10s_infinite] text-gray-200">
+                <span className="animate-[code-6_10s_infinite] terminal-prompt">
+                  ~/projects/jfmdigitalworks $
+                </span>{' '}
+                <span className="animate-[code-7_10s_infinite] terminal-command">
                   vercel deploy
                 </span>
                 <br />
-                <span className="animate-[code-6_10s_infinite]">
-                  ✓ Deployed to production
+                <span className="animate-[code-8_10s_infinite] terminal-deploy">
+                  🚀 Deployed to production
                 </span>
               </div>
             </div>
