@@ -105,7 +105,7 @@ export default function RootLayout({
             {children}
           </div>
         </Suspense>
-        
+
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
