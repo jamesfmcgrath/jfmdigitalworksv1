@@ -97,11 +97,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://api.web3forms.com" />
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
 
-        {/* Simple Analytics - Privacy-focused analytics */}
+        {/* Simple Analytics - Privacy-focused analytics with EU Mode */}
         <script
           async
           defer
           src="https://scripts.simpleanalytics.com/latest.js"
+          data-mode="eu"
         ></script>
         <noscript>
           <img

@@ -6,12 +6,14 @@ interface SimpleAnalyticsProps {
   domain?: string;
   respectDoNotTrack?: boolean;
   ignorePages?: string[];
+  euMode?: boolean;
 }
 
 export default function SimpleAnalytics({
   domain = 'jfmdigitalworks.com',
   respectDoNotTrack = true,
   ignorePages = ['/admin', '/dev', '/test'],
+  euMode = true, // Enable EU Mode for GDPR compliance
 }: SimpleAnalyticsProps) {
   useEffect(() => {
     // Only load in production
@@ -51,6 +53,10 @@ export default function SimpleAnalytics({
       window.sa_event.q = window.sa_event.q || [];
 
       console.log('Simple Analytics: Initialized for domain:', domain);
+
+      if (euMode) {
+        console.log('Simple Analytics: EU Mode enabled for GDPR compliance');
+      }
     }
   }, [domain, respectDoNotTrack, ignorePages]);
 
