@@ -35,12 +35,21 @@ export const metadata = {
     siteName: 'JFM Digital Works',
     locale: 'en_IE',
     type: 'website',
+    images: [
+      {
+        url: '/images/og-preview.png',
+        width: 1200,
+        height: 630,
+        alt: 'JFM Digital Works - Secure, Accessible Web Solutions',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'JFM Digital Works – Secure, Accessible Web Solutions',
     description:
       'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+    images: ['/images/og-preview.png'],
   },
   robots: {
     index: true,
@@ -52,6 +61,12 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google Search Console verification code
+  },
+  alternates: {
+    canonical: 'https://jfmdigitalworks.com',
   },
 };
 
@@ -96,6 +111,41 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#6366f1" />
         <link rel="preconnect" href="https://api.web3forms.com" />
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
+
+        {/* Structured Data - JSON-LD */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'JFM Digital Works',
+              description:
+                'Modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+              url: 'https://jfmdigitalworks.com',
+              logo: 'https://jfmdigitalworks.com/images/logo-192.png',
+              foundingDate: '2024',
+              address: {
+                '@type': 'PostalAddress',
+                addressCountry: 'IE',
+                addressRegion: 'Ireland',
+              },
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'info@jfmdigitalworks.com',
+                contactType: 'Customer Service',
+                availableLanguage: 'English',
+              },
+              sameAs: ['https://github.com/jamesfmcgrath'],
+              offers: {
+                '@type': 'Offer',
+                category: 'Web Development Services',
+                description:
+                  'Secure, accessible, and high-performance web solutions',
+              },
+            }),
+          }}
+        />
       </head>
       <body
         className={`${inter.variable} ${firaCode.variable} bg-gray-100 font-inter tracking-tight text-gray-800 antialiased`}
