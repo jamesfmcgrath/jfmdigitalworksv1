@@ -20,13 +20,13 @@
   border: 0;
 }
 
-/* Color variables */
+/* Color variables - updated for accessibility */
 :root {
   --jfm-base: #f8fafc;
   --jfm-heading: #1e293b;
-  --jfm-tech-blue: #3b82f6;
-  --jfm-tech-blue-light: #60a5fa;
-  --jfm-tech-blue-dark: #2563eb;
+  --jfm-tech-blue: #1a73e8; /* Updated for better contrast */
+  --jfm-tech-blue-light: #4285f4;
+  --jfm-tech-blue-dark: #1557b3; /* Darker for hover */
   --jfm-accent: #10b981;
   --jfm-section: #f1f5f9;
 }
@@ -68,7 +68,7 @@ h1.text-3xl {
   }
 }
 
-/* Brand button styles */
+/* Brand button styles - enhanced for accessibility */
 .btn-jfm-primary {
   padding: 0.75rem 1.5rem;
   border-radius: 0.5rem;
@@ -80,10 +80,20 @@ h1.text-3xl {
   background-color: var(--jfm-tech-blue);
   color: white;
   transition: all 0.3s ease;
+  border: 0; /* Remove border for better contrast */
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-jfm-primary:hover {
   background-color: var(--jfm-tech-blue-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-jfm-primary:focus {
+  outline: none;
+  ring: 2px solid var(--jfm-tech-blue);
+  ring-offset: 2px;
 }
 
 .btn-jfm-secondary {
@@ -96,13 +106,22 @@ h1.text-3xl {
   justify-content: center;
   background-color: white;
   color: var(--jfm-heading);
-  border: 1px solid var(--jfm-tech-blue);
+  border: 2px solid var(--jfm-tech-blue); /* Thicker border for better visibility */
   transition: all 0.3s ease;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .btn-jfm-secondary:hover {
   background-color: var(--jfm-tech-blue);
   color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.btn-jfm-secondary:focus {
+  outline: none;
+  ring: 2px solid var(--jfm-tech-blue);
+  ring-offset: 2px;
 }
 
 /* Text colors */

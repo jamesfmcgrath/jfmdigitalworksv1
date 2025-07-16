@@ -38,10 +38,14 @@ export default function HeroHome() {
                   <a
                     className="btn group mb-4 w-full btn-jfm-primary shadow-sm sm:mb-0 sm:w-auto"
                     href="#contact"
+                    aria-label="Navigate to contact form"
                   >
                     <span className="relative inline-flex items-center">
                       Get In Touch{' '}
-                      <span className="ml-1 tracking-normal text-blue-200 transition-transform group-hover:translate-x-0.5">
+                      <span
+                        className="ml-1 tracking-normal text-blue-200 transition-transform group-hover:translate-x-0.5"
+                        aria-hidden="true"
+                      >
                         -&gt;
                       </span>
                     </span>
@@ -49,6 +53,7 @@ export default function HeroHome() {
                   <a
                     className="btn w-full btn-jfm-secondary shadow-sm sm:ml-4 sm:w-auto"
                     href="#services"
+                    aria-label="Navigate to services section"
                   >
                     Our Services
                   </a>

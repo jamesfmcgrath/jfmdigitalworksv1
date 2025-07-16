@@ -22,18 +22,24 @@
   --color-jfm-light: #f1f5f9;
   --color-jfm-muted: #94a3b8;
 
-  /* Override default blue colors with JFM blue */
-  --color-blue-500: #1e90ff;
-  --color-blue-600: #1c7ed6;
-  --color-blue-400: #4dabf7;
-  --color-blue-300: #74c0fc;
+  /* Override default blue colors with JFM blue - enhanced for accessibility */
+  --color-blue-500: #1a73e8; /* Darker blue for better contrast */
+  --color-blue-600: #1557b3; /* Even darker for hover states */
+  --color-blue-400: #4285f4; /* Slightly darker light blue */
+  --color-blue-300: #6fa8f5; /* Better contrast for light uses */
 
-  /* Gray overrides for better contrast */
-  --color-gray-800: #0e1116;
-  --color-gray-700: #1f2937;
-  --color-gray-600: #4b5563;
-  --color-gray-500: #6b7280;
-  --color-gray-400: #94a3b8;
+  /* Accessible color utilities for high contrast */
+  --color-accessible-blue: #1a73e8; /* WCAG AA compliant blue */
+  --color-accessible-blue-hover: #1557b3; /* High contrast hover */
+  --color-accessible-text-light: #ffffff; /* Pure white for dark backgrounds */
+  --color-accessible-text-dark: #0e1116; /* Dark text for light backgrounds */
+
+  /* Enhanced gray scale for better accessibility */
+  --color-gray-800: #0e1116; /* Very dark for high contrast */
+  --color-gray-700: #1f2937; /* Dark text */
+  --color-gray-600: #374151; /* Medium dark - better contrast */
+  --color-gray-500: #6b7280; /* Medium gray */
+  --color-gray-400: #9ca3af; /* Light gray - better contrast than before */
   --color-gray-300: #d1d5db;
   --color-gray-200: #e5e7eb;
   --color-gray-100: #f1f5f9;

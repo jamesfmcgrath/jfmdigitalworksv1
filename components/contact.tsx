@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import AccessibleButton from './ui/accessible-button';
 
 // Email validation function
 const validateEmail = (email: string): boolean => {
@@ -337,9 +338,12 @@ export default function Contact() {
                   <div>
                     <label
                       htmlFor="name"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Name
+                      Name{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <input
                       type="text"
@@ -347,17 +351,25 @@ export default function Contact() {
                       name="name"
                       required
                       disabled={isSubmitting}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
-                      placeholder="Your name"
+                      className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
+                      placeholder="Your full name"
+                      aria-describedby="name-error"
+                      aria-invalid={
+                        submitMessage.includes('name') ? 'true' : 'false'
+                      }
+                      autoComplete="name"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="email"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Email
+                      Email{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <input
                       type="email"
@@ -365,17 +377,25 @@ export default function Contact() {
                       name="email"
                       required
                       disabled={isSubmitting}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
+                      className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                       placeholder="your@email.com"
+                      aria-describedby="email-error"
+                      aria-invalid={
+                        submitMessage.includes('email') ? 'true' : 'false'
+                      }
+                      autoComplete="email"
                     />
                   </div>
 
                   <div>
                     <label
                       htmlFor="message"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-gray-700 mb-1"
                     >
-                      Message
+                      Message{' '}
+                      <span className="text-red-500" aria-label="required">
+                        *
+                      </span>
                     </label>
                     <textarea
                       id="message"
@@ -383,31 +403,78 @@ export default function Contact() {
                       rows={4}
                       required
                       disabled={isSubmitting}
-                      className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50"
+                      className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                       placeholder="Tell us about your project..."
+                      aria-describedby="message-error message-help"
+                      aria-invalid={
+                        submitMessage.includes('message') ? 'true' : 'false'
+                      }
+                      maxLength={2000}
                     />
+                    <p className="mt-1 text-sm text-gray-500" id="message-help">
+                      Maximum 2000 characters
+                    </p>
                   </div>
 
                   {submitMessage && (
                     <div
+                      role="alert"
+                      aria-live="polite"
+                      id="form-message"
                       className={`p-4 rounded-md ${
                         submitMessage.includes('Thank you') ?
                           'bg-green-50 text-green-800 border border-green-200'
                         : 'bg-red-50 text-red-800 border border-red-200'
                       }`}
                     >
-                      {submitMessage}
+                      <div className="flex items-center">
+                        {submitMessage.includes('Thank you') ?
+                          <svg
+                            className="h-5 w-5 mr-2 text-green-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M5 13l4 4L19 7"
+                            />
+                          </svg>
+                        : <svg
+                            className="h-5 w-5 mr-2 text-red-600"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.732-.833-2.5 0L3.34 16.5c-.77.833.192 2.5 1.732 2.5z"
+                            />
+                          </svg>
+                        }
+                        <span>{submitMessage}</span>
+                      </div>
                     </div>
                   )}
 
                   <div>
-                    <button
+                    <AccessibleButton
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn bg-blue-500 text-white hover:bg-blue-600 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                      loading={isSubmitting}
+                      className="w-full"
+                      ariaLabel={
+                        isSubmitting ? 'Sending message...' : 'Send message'
+                      }
                     >
                       {isSubmitting ? 'Sending...' : 'Send Message'}
-                    </button>
+                    </AccessibleButton>
                   </div>
                 </form>
               </div>
