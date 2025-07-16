@@ -1,7 +1,7 @@
 import './css/style.css';
 
-import SimpleAnalytics from '@/components/simple-analytics';
 import { Fira_Code, Inter } from 'next/font/google';
+import Script from 'next/script';
 import { Suspense } from 'react';
 
 const inter = Inter({
@@ -96,21 +96,6 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#6366f1" />
         <link rel="preconnect" href="https://api.web3forms.com" />
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
-
-        {/* Simple Analytics - Privacy-focused analytics with EU Mode */}
-        <script
-          async
-          defer
-          src="https://scripts.simpleanalytics.com/latest.js"
-          data-mode="eu"
-        ></script>
-        <noscript>
-          <img
-            src="https://queue.simpleanalytics.com/noscript.gif"
-            alt=""
-            referrerPolicy="no-referrer-when-downgrade"
-          />
-        </noscript>
       </head>
       <body
         className={`${inter.variable} ${firaCode.variable} bg-gray-100 font-inter tracking-tight text-gray-800 antialiased`}
@@ -120,7 +105,8 @@ export default function RootLayout({
             {children}
           </div>
         </Suspense>
-        <SimpleAnalytics />
+        
+        <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
   );
