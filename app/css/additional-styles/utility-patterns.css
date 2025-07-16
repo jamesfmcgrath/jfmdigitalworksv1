@@ -123,3 +123,15 @@ input[type='search']::-webkit-search-results-decoration {
 .terminal-deploy {
   color: var(--color-terminal-cyan);
 }
+
+.terminal-ai {
+  color: #a855f7; /* Purple for AI responses */
+}
+
+.terminal-developer {
+  color: #f59e0b; /* Orange for developer messages */
+}
+
+.terminal-metric {
+  color: #10b981; /* Green for metrics */
+}

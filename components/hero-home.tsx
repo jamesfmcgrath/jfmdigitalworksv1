@@ -78,30 +78,31 @@ export default function HeroHome() {
                   ~/projects/jfmdigitalworks $
                 </span>{' '}
                 <span className="animate-[code-2_10s_infinite] terminal-command">
-                  pnpm run build
+                  gemini "fix my CSS please"
                 </span>
                 <br />
-                <span className="animate-[code-3_10s_infinite] terminal-info">
-                  ⚡ Building for production...
+                <span className="animate-[code-3_10s_infinite] terminal-ai">
+                  🤖 Gemini: "Sure! But first, can you be more specific?"
                 </span>
                 <br />
-                <span className="animate-[code-4_10s_infinite] terminal-success">
-                  ✓ Compiled successfully
-                </span>{' '}
-                <span className="animate-[code-5_10s_infinite] terminal-warning">
-                  Performance: 98/100
+                <span className="animate-[code-4_10s_infinite] terminal-command">
+                  gemini "make it accessible and pretty"
                 </span>
                 <br />
-                <br />
-                <span className="animate-[code-6_10s_infinite] terminal-prompt">
-                  ~/projects/jfmdigitalworks $
-                </span>{' '}
-                <span className="animate-[code-7_10s_infinite] terminal-command">
-                  vercel deploy
+                <span className="animate-[code-5_10s_infinite] terminal-ai">
+                  ✨ Gemini: "Perfect! Generated 47 lines of pristine code"
                 </span>
                 <br />
-                <span className="animate-[code-8_10s_infinite] terminal-deploy">
-                  🚀 Deployed to production
+                <span className="animate-[code-6_10s_infinite] terminal-metric">
+                  🚨 Lighthouse: Performance 98/100, Accessibility 100/100
+                </span>
+                <br />
+                <span className="animate-[code-7_10s_infinite] terminal-developer">
+                  🎉 Developer: "AI pair programming FTW!"
+                </span>
+                <br />
+                <span className="animate-[code-8_10s_infinite] terminal-success">
+                  ✅ Mission accomplished. Coffee time! ☕
                 </span>
               </div>
             </div>
