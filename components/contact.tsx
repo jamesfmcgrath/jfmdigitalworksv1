@@ -423,10 +423,6 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                       placeholder="Your full name"
-                      aria-describedby="name-error"
-                      aria-invalid={
-                        submitMessage.includes('name') ? 'true' : 'false'
-                      }
                       autoComplete="name"
                     />
                   </div>
@@ -447,10 +443,6 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                       placeholder="your@email.com"
-                      aria-describedby="email-error"
-                      aria-invalid={
-                        submitMessage.includes('email') ? 'true' : 'false'
-                      }
                       autoComplete="email"
                     />
                   </div>
@@ -471,10 +463,6 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                       placeholder="Tell us about your project..."
-                      aria-describedby="message-error message-help"
-                      aria-invalid={
-                        submitMessage.includes('message') ? 'true' : 'false'
-                      }
                       maxLength={2000}
                     />
                     <p className="mt-1 text-sm text-gray-500" id="message-help">
@@ -509,8 +497,6 @@ export default function Contact() {
                           onChange={(e) => setCaptchaInput(e.target.value)}
                           className="form-input-accessible mt-1 block w-full rounded-md shadow-sm disabled:opacity-50"
                           placeholder="Enter your answer"
-                          aria-describedby="captcha-question captcha-error"
-                          aria-invalid={captchaError ? 'true' : 'false'}
                         />
                       </div>
                       <button
