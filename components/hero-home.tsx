@@ -78,19 +78,19 @@ export default function HeroHome() {
                   ~/projects/jfmdigitalworks $
                 </span>{' '}
                 <span className="animate-[code-2_10s_infinite] terminal-command">
-                  gemini "fix my CSS please"
+                  gemini &quot;fix my CSS please&quot;
                 </span>
                 <br />
                 <span className="animate-[code-3_10s_infinite] terminal-ai">
-                  🤖 Gemini: "Sure! But first, can you be more specific?"
+                  🤖 Gemini: &quot;Sure! But first, can you be more specific?&quot;
                 </span>
                 <br />
                 <span className="animate-[code-4_10s_infinite] terminal-command">
-                  gemini "make it accessible and pretty"
+                  gemini &quot;make it accessible and pretty&quot;
                 </span>
                 <br />
                 <span className="animate-[code-5_10s_infinite] terminal-ai">
-                  ✨ Gemini: "Perfect! Generated 47 lines of pristine code"
+                  ✨ Gemini: &quot;Perfect! Generated 47 lines of pristine code&quot;
                 </span>
                 <br />
                 <span className="animate-[code-6_10s_infinite] terminal-metric">
@@ -98,7 +98,7 @@ export default function HeroHome() {
                 </span>
                 <br />
                 <span className="animate-[code-7_10s_infinite] terminal-developer">
-                  🎉 Developer: "AI pair programming FTW!"
+                  🎉 Developer: &quot;AI pair programming FTW!&quot;
                 </span>
                 <br />
                 <span className="animate-[code-8_10s_infinite] terminal-success">

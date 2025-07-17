@@ -237,7 +237,7 @@ export default function Contact() {
 
       if (response.ok && result.success) {
         setSubmitMessage(
-          "Thank you for your message! We'll get back to you soon."
+          "Thank you for your message! We&apos;ll get back to you soon."
         );
         (e.target as HTMLFormElement).reset();
         setCaptchaInput('');
@@ -268,7 +268,7 @@ export default function Contact() {
               Get In Touch
             </h2>
             <p className="text-lg text-gray-600 mt-4 line-height-accessible">
-              Ready to start your next project? Let's discuss how we can help
+              Ready to start your next project? Let&apos;s discuss how we can help
               you create modern, secure web solutions.
             </p>
           </div>
@@ -280,13 +280,13 @@ export default function Contact() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                    Let's Work Together
+                    Let&apos;s Work Together
                   </h3>
                   <p className="text-gray-600 mb-6 line-height-accessible">
-                    We're always excited to work on new projects and help
+                    We&apos;re always excited to work on new projects and help
                     businesses create better digital experiences. Whether you
                     need a complete web application, accessibility audit, or
-                    ongoing consulting, we're here to help.
+                    ongoing consulting, we&apos;re here to help.
                   </p>
                 </div>
 
