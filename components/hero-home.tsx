@@ -36,7 +36,7 @@ export default function HeroHome() {
                   data-aos-delay={450}
                 >
                   <a
-                    className="btn group mb-4 w-full btn-jfm-primary shadow-sm sm:mb-0 sm:w-auto"
+                    className="btn group mb-4 w-full btn-jfm-primary shadow-sm sm:mb-0 sm:w-auto min-h-[44px]"
                     href="#contact"
                     aria-label="Navigate to contact form"
                   >
@@ -51,7 +51,7 @@ export default function HeroHome() {
                     </span>
                   </a>
                   <a
-                    className="btn w-full btn-jfm-secondary shadow-sm sm:ml-4 sm:w-auto"
+                    className="btn w-full btn-jfm-secondary shadow-sm sm:ml-4 sm:w-auto min-h-[44px]"
                     href="#services"
                     aria-label="Navigate to services section"
                   >
