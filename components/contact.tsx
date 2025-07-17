@@ -121,12 +121,11 @@ export default function Contact() {
   const [lastSubmission, setLastSubmission] = useState<number>(0);
   const [captcha, setCaptcha] = useState<{
     question: string;
-    answer: number;
-  } | null>(null);
+    answer: number | null;
+  }>({ question: '', answer: null });
   const [captchaInput, setCaptchaInput] = useState('');
   const [captchaError, setCaptchaError] = useState('');
 
-  // Generate captcha on component mount
   useEffect(() => {
     setCaptcha(generateCaptcha());
   }, []);
@@ -154,7 +153,7 @@ export default function Contact() {
     }
 
     // Validate captcha
-    if (!captcha || parseInt(captchaInput) !== captcha.answer) {
+    if (captcha.answer === null || parseInt(captchaInput) !== captcha.answer) {
       setCaptchaError('Incorrect answer. Please try again.');
       regenerateCaptcha();
       setIsSubmitting(false);
@@ -498,7 +497,7 @@ export default function Contact() {
                           className="text-sm text-gray-600 mb-2"
                           id="captcha-question"
                         >
-                          {captcha?.question || 'Loading...'}
+                          {captcha.question}
                         </p>
                         <input
                           type="number"
