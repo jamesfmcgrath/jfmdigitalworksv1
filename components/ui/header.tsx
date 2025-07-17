@@ -25,7 +25,7 @@ export default function Header() {
             <li>
               <a
                 href="#services"
-                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-blue-600 transition-colors min-h-[44px]"
               >
                 Services
               </a>

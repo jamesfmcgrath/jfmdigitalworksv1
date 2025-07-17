@@ -345,7 +345,7 @@ export default function Contact() {
                       </div>
                     </div>
                     <div className="ml-4">
-                      <p className="text-sm font-medium text-gray-800">
+                      <p className="text-sm font-medium text-gray-800 leading-2">
                         Location
                       </p>
                       <p className="text-gray-600">Ireland & EU</p>
@@ -602,7 +602,7 @@ export default function Contact() {
                       type="submit"
                       disabled={isSubmitting}
                       loading={isSubmitting}
-                      className="w-full"
+                      className="w-full min-h-[44px]"
                       ariaLabel={
                         isSubmitting ? 'Sending message...' : 'Send message'
                       }

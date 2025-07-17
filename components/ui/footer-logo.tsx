@@ -4,7 +4,7 @@ export default function FooterLogo() {
   return (
     <Link
       href="/"
-      className="inline-flex items-center"
+      className="inline-flex items-center min-h-[44px]"
       aria-label="JFM Digital Works"
     >
       <div className="flex items-center space-x-2">
