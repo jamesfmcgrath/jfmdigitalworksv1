@@ -9,87 +9,16 @@ export default function Footer({ border = false }: { border?: boolean }) {
           className={`grid gap-10 py-8 sm:grid-cols-12 md:py-12 ${border ? 'border-t border-gray-700' : ''}`}
         >
           {/* 1st block */}
-          <div className="space-y-4 sm:col-span-12 lg:col-span-6">
+          <div className="space-y-4 sm:col-span-12  md:col-span-9 lg:col-span-10">
             <div>
               <FooterLogo />
             </div>
-            <div className="text-sm text-gray-400 max-w-md">
+            <div className="text-sm text-gray-400 max-w-lg">
               Modern, security-first web consultancy focused on building
               accessible, performant, and cloud-native digital experiences for
               clients in Ireland and across the EU.
             </div>
           </div>
-
-          {/* 2nd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium text-white">Services</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#services"
-                >
-                  Web Development
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#services"
-                >
-                  Accessibility
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#services"
-                >
-                  Performance Audits
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#services"
-                >
-                  AI Workflows
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* 3rd block */}
-          <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
-            <h3 className="text-sm font-medium text-white">Company</h3>
-            <ul className="space-y-2 text-sm">
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#work"
-                >
-                  Our Work
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="#contact"
-                >
-                  Contact
-                </a>
-              </li>
-              <li>
-                <a
-                  className="text-gray-400 transition hover:text-white touch-target-enhanced inline-block py-2"
-                  href="mailto:info@jfmdigitalworks.com"
-                >
-                  Email Us
-                </a>
-              </li>
-            </ul>
-          </div>
-
           {/* 4th block */}
           <div className="space-y-2 sm:col-span-6 md:col-span-3 lg:col-span-2">
             <h3 className="text-sm font-medium text-white">Connect</h3>

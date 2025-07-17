@@ -261,6 +261,9 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+  html {
+    --tw-leading: 1.6;
+  }
 }
 
 /* Accessibility: Line Height Enhancements */
