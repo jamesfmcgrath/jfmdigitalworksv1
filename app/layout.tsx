@@ -1,5 +1,6 @@
 import './css/style.css';
 
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Fira_Code, Inter } from 'next/font/google';
 import Script from 'next/script';
 import { Suspense } from 'react';
@@ -156,6 +157,7 @@ export default function RootLayout({
           </div>
         </Suspense>
 
+        <SpeedInsights />
         <Script src="https://scripts.simpleanalyticscdn.com/latest.js" />
       </body>
     </html>
