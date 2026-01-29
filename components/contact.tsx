@@ -67,7 +67,16 @@ export default function Contact() {
         body: JSON.stringify(submissionData),
       });
 
-      const result = await response.json();
+      let result: { success?: boolean; message?: string; body?: { message?: string } };
+      try {
+        result = await response.json();
+      } catch {
+        setSubmitMessage(
+          'Something went wrong. Please try again or email hello@jfmdigitalworks.com directly.'
+        );
+        setIsSubmitting(false);
+        return;
+      }
 
       if (response.ok && result.success) {
         setSubmitMessage(
@@ -75,9 +84,9 @@ export default function Contact() {
         );
         (e.target as HTMLFormElement).reset();
       } else {
-        setSubmitMessage(
-          'Something went wrong. Please try again or email hello@jfmdigitalworks.com directly.'
-        );
+        const errorMsg =
+          result?.body?.message || result?.message || 'Something went wrong. Please try again or email hello@jfmdigitalworks.com directly.';
+        setSubmitMessage(errorMsg);
       }
     } catch (error) {
       console.error('Form submission error:', error);
