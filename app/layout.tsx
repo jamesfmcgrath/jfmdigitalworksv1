@@ -21,18 +21,18 @@ const firaCode = Fira_Code({
 
 export const metadata = {
   metadataBase: new URL('https://jfmdigitalworks.com'),
-  title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
+  title: 'JFM Digital Works – Modern Drupal Solutions for Enterprise & Government',
   description:
-    'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites. Gold Winner 2025 dotCOMM Awards.',
+    'Award-winning Drupal developer with 25 years experience. Modern Drupal 8-11 architectures, WCAG compliance, government-grade security, AI-accelerated delivery. Gold Winner 2025 dotCOMM Awards.',
   keywords:
-    'LocalGov Drupal, Drupal accessibility consultant, LocalGov Drupal Ireland, Drupal consultant UK, WCAG compliance, government websites, local authority websites, Drupal migration, accessibility audit, Irish councils, UK councils',
+    'Drupal developer Ireland, enterprise Drupal solutions, Drupal security audit, WCAG accessibility consultant, Drupal 11 migration, modern Drupal architecture, Drupal consultant, government Drupal, LocalGov Drupal, Drupal accessibility, enterprise web development',
   authors: [{ name: 'JFM Digital Works' }],
   creator: 'JFM Digital Works',
   publisher: 'JFM Digital Works',
   openGraph: {
-    title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
+    title: 'JFM Digital Works – Modern Drupal Solutions for Enterprise & Government',
     description:
-      'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites. Gold Winner 2025 dotCOMM Awards.',
+      'Award-winning Drupal developer with 25 years experience. Modern Drupal 8-11 architectures, WCAG compliance, government-grade security, AI-accelerated delivery.',
     url: 'https://jfmdigitalworks.com',
     siteName: 'JFM Digital Works',
     locale: 'en_IE',
@@ -42,15 +42,15 @@ export const metadata = {
         url: '/images/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'JFM Digital Works - LocalGov Drupal Specialist',
+        alt: 'JFM Digital Works - Modern Drupal Solutions',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
+    title: 'JFM Digital Works – Modern Drupal Solutions for Enterprise & Government',
     description:
-      'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites.',
+      'Award-winning Drupal developer with 25 years experience. Modern Drupal 8-11 architectures, WCAG compliance, government-grade security.',
     images: ['/images/og-preview.png'],
   },
   robots: {
@@ -120,7 +120,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'JFM Digital Works',
               description:
-                'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites.',
+                'Award-winning Drupal developer with 25 years experience. Modern Drupal solutions for enterprise and government. WCAG compliance, security audits, migrations, and AI-accelerated development.',
               url: 'https://jfmdigitalworks.com',
               logo: 'https://jfmdigitalworks.com/images/logo-192.png',
               foundingDate: '2024',
@@ -138,9 +138,9 @@ export default function RootLayout({
               sameAs: ['https://github.com/jamesfmcgrath'],
               offers: {
                 '@type': 'Offer',
-                category: 'LocalGov Drupal Services',
+                category: 'Drupal Development Services',
                 description:
-                  'LocalGov Drupal implementation, migration, accessibility audits, and ongoing support for government websites',
+                  'Modern Drupal development, security audits, accessibility compliance, migrations, and technical consulting for enterprise and government organizations',
               },
             }),
           }}

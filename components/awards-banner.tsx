@@ -4,7 +4,7 @@ export default function AwardsBanner() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         <div className="py-6 text-center">
           <p className="text-base font-medium md:text-lg">
-            🏆 Gold Winner - 2025 dotCOMM Awards | 🏆 Pinnacle Award - NAGW | 40+ Government Websites Delivered
+            🏆 Gold Winner - 2025 dotCOMM Awards | 🏆 Pinnacle Award - NAGW | 40+ Successful Projects Delivered
           </p>
         </div>
       </div>

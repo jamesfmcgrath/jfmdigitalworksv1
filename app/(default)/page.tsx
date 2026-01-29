@@ -1,9 +1,9 @@
 export const metadata = {
-  title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
+  title: 'JFM Digital Works – Modern Drupal Solutions for Enterprise & Government',
   description:
-    'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites. Gold Winner 2025 dotCOMM Awards.',
+    'Award-winning Drupal developer with 25 years experience. Modern Drupal 8-11 architectures, WCAG compliance, government-grade security, AI-accelerated delivery. Gold Winner 2025 dotCOMM Awards.',
   keywords:
-    'LocalGov Drupal, Drupal accessibility consultant, LocalGov Drupal Ireland, Drupal consultant UK, WCAG compliance, government websites, local authority websites, Drupal migration, accessibility audit',
+    'Drupal developer Ireland, enterprise Drupal solutions, Drupal security audit, WCAG accessibility consultant, Drupal 11 migration, modern Drupal architecture, Drupal consultant, government Drupal, LocalGov Drupal, Drupal accessibility',
 };
 
 // Server-side components - use regular imports for better performance

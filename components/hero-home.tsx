@@ -14,17 +14,26 @@ export default function HeroHome() {
               data-aos="zoom-y-out"
               data-aos-delay={150}
             >
-              LocalGov Drupal Specialist <br className="max-lg:hidden" />
-              for Irish &amp; UK Local Authorities
+              Modern Drupal Solutions <br className="max-lg:hidden" />
+              for Enterprise &amp; Government
             </h1>
             <div className="mx-auto max-w-3xl">
               <p
-                className="mb-8 text-lg text-gray-700"
+                className="mb-4 text-lg text-gray-700"
                 data-aos="zoom-y-out"
                 data-aos-delay={300}
               >
-                Award-winning accessible government websites. WCAG 2.1 AA
-                compliance. Faster delivery through AI-assisted workflows.
+                Award-winning accessible, secure web applications built with 25
+                years of experience. Drupal 8-11 architectures, WCAG compliance,
+                government-grade security, and AI-accelerated delivery.
+              </p>
+              <p
+                className="mb-8 text-base text-gray-600"
+                data-aos="zoom-y-out"
+                data-aos-delay={350}
+              >
+                Proven expertise across sectors—from enterprise businesses to
+                government agencies. Same high standards, tailored to your needs.
               </p>
               <div className="relative">
                 <div

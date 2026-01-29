@@ -14,9 +14,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <FooterLogo />
             </div>
             <div className="text-sm text-gray-400 max-w-lg">
-              LocalGov Drupal specialist serving Irish and UK local authorities.
-              Award-winning accessible government websites with WCAG 2.1 AA
-              compliance.
+              Modern Drupal solutions for enterprise and government. Award-winning
+              accessible, secure applications. WCAG compliance, AI-accelerated
+              development, 25 years experience.
             </div>
           </div>
           {/* 4th block */}

@@ -268,9 +268,9 @@ export default function Contact() {
               Get In Touch
             </h2>
             <p className="text-lg text-gray-600 mt-4 line-height-accessible">
-              Ready to discuss your LocalGov Drupal project? Whether you&apos;re
-              planning a migration, need an accessibility audit, or facing a
-              technical challenge, let&apos;s talk.
+              Ready to discuss your project? Whether you need modern Drupal
+              development, a security or accessibility audit, help with a migration,
+              or expert consulting on a technical challenge—let&apos;s talk.
             </p>
           </div>
 
