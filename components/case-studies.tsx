@@ -3,35 +3,35 @@ export default function CaseStudies() {
     {
       name: 'Lexington-Fayette Urban Council Government',
       challenge: 'City of 300k+ residents needed multilingual site with significantly improved search functionality',
-      solution: 'Led front-end implementation with accessibility-first design, integrated advanced search architecture, and comprehensive WCAG 2.1 AA compliance',
+      myRole: 'Led front-end implementation including accessibility testing, design system integration, and advanced search architecture as part of agency team',
       results: [
-        'Project earned Gold - 2025 dotCOMM Awards',
+        'Team earned Gold - 2025 dotCOMM Awards',
         '140% improvement in site search performance',
-        'Multi-language support for diverse community',
+        'Multi-language support delivered',
         'Full WCAG 2.1 AA compliance achieved',
       ],
       tech: ['Modern Web', 'Accessibility', 'Multi-language', 'Government'],
-      award: 'Gold - 2025 dotCOMM Awards',
+      award: 'Team Award',
       url: '#',
     },
     {
       name: 'Metropolitan Water Reclamation District of Greater Chicago',
       challenge: 'Large municipal organization needed accessible website with advanced document management and public education features',
-      solution: 'Developed responsive front-end templates, implemented accessibility enhancements, created document repository system',
+      myRole: 'Developed responsive front-end templates and implemented accessibility enhancements as key contributor to agency team',
       results: [
-        'Project earned Pinnacle Award - NAGW',
-        'Comprehensive accessibility compliance',
+        'Team earned Pinnacle Award - NAGW',
+        'Comprehensive accessibility compliance delivered',
         'Improved public access to environmental data',
-        'Enhanced storytelling features for community engagement',
+        'Enhanced storytelling features for community',
       ],
       tech: ['Accessibility', 'Government', 'Document Management'],
-      award: 'Pinnacle Award - NAGW',
+      award: 'Team Award',
       url: '#',
     },
     {
       name: 'Johnson County, Kansas',
       challenge: 'County website needed complete redesign focused on resident usability and streamlined content access',
-      solution: 'Rebuilt front-end architecture with performance optimizations, conducted extensive cross-browser testing, improved content hierarchy',
+      myRole: 'Rebuilt front-end architecture with performance optimizations and conducted extensive cross-browser testing as part of development team',
       results: [
         'Significantly improved page load times',
         'Enhanced mobile experience for 500k+ residents',
@@ -44,11 +44,11 @@ export default function CaseStudies() {
     {
       name: 'D.C. Public Library',
       challenge: 'Library system needed modern digital presence to improve patron access to resources and services',
-      solution: 'Built front-end component library, conducted comprehensive accessibility audit, implemented improved navigation architecture',
+      myRole: 'Built front-end component library and conducted comprehensive accessibility audit as contributor to agency team',
       results: [
         'Enhanced navigation and content discovery',
         'Increased engagement with library resources',
-        'Modern, accessible user interface',
+        'Modern, accessible user interface delivered',
         'Reusable component system for future development',
       ],
       tech: ['Component Library', 'Accessibility', 'React'],
@@ -66,10 +66,10 @@ export default function CaseStudies() {
         {/* Section header */}
         <div className="mx-auto max-w-3xl pb-12 text-center md:pb-16">
           <h2 id="portfolio-heading" className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
-            Recent Projects
+            Recent Work
           </h2>
           <p className="text-lg text-gray-600">
-            Real results from real projects. Each one solved a specific business challenge.
+            Selected projects I contributed to as Senior Engineer with leading digital agencies. Each collaboration solved specific business challenges and delivered measurable results.
           </p>
         </div>
 
@@ -112,12 +112,12 @@ export default function CaseStudies() {
                 <p className="text-gray-600">{project.challenge}</p>
               </div>
 
-              {/* Solution */}
+              {/* My Role */}
               <div className="mb-4">
                 <p className="text-sm font-medium text-gray-700 mb-1">
-                  Solution:
+                  My Role:
                 </p>
-                <p className="text-gray-600">{project.solution}</p>
+                <p className="text-gray-600">{project.myRole}</p>
               </div>
 
               {/* Results */}
@@ -164,7 +164,7 @@ export default function CaseStudies() {
                 className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
                 aria-label={`View live site for ${project.name}`}
               >
-                View Live Site
+                View Live Site →
                 <svg
                   className="ml-1 h-4 w-4"
                   fill="none"
