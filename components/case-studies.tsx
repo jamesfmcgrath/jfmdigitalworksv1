@@ -2,8 +2,10 @@ export default function CaseStudies() {
   const projects = [
     {
       name: 'Lexington-Fayette Urban Council Government',
-      challenge: 'City of 300k+ residents needed multilingual site with significantly improved search functionality',
-      myRole: 'Led front-end implementation including accessibility testing, design system integration, and advanced search architecture as part of agency team',
+      challenge:
+        'City of 300k+ residents needed multilingual site with significantly improved search functionality',
+      myRole:
+        'Led front-end implementation including accessibility testing, design system integration, and advanced search architecture as part of agency team',
       results: [
         'Team earned Gold - 2025 dotCOMM Awards',
         '140% improvement in site search performance',
@@ -12,12 +14,14 @@ export default function CaseStudies() {
       ],
       tech: ['Modern Web', 'Accessibility', 'Multi-language', 'Government'],
       award: 'Team Award',
-      url: '#',
+      url: 'https://www.lexingtonky.gov/',
     },
     {
       name: 'Metropolitan Water Reclamation District of Greater Chicago',
-      challenge: 'Large municipal organization needed accessible website with advanced document management and public education features',
-      myRole: 'Developed responsive front-end templates and implemented accessibility enhancements as key contributor to agency team',
+      challenge:
+        'Large municipal organization needed accessible website with advanced document management and public education features',
+      myRole:
+        'Developed responsive front-end templates and implemented accessibility enhancements as key contributor to agency team',
       results: [
         'Team earned Pinnacle Award - NAGW',
         'Comprehensive accessibility compliance delivered',
@@ -26,12 +30,14 @@ export default function CaseStudies() {
       ],
       tech: ['Accessibility', 'Government', 'Document Management'],
       award: 'Team Award',
-      url: '#',
+      url: 'https://mwrd.org/',
     },
     {
       name: 'Johnson County, Kansas',
-      challenge: 'County website needed complete redesign focused on resident usability and streamlined content access',
-      myRole: 'Rebuilt front-end architecture with performance optimizations and conducted extensive cross-browser testing as part of development team',
+      challenge:
+        'County website needed complete redesign focused on resident usability and streamlined content access',
+      myRole:
+        'Rebuilt front-end architecture with performance optimizations and conducted extensive cross-browser testing as part of development team',
       results: [
         'Significantly improved page load times',
         'Enhanced mobile experience for 500k+ residents',
@@ -39,12 +45,14 @@ export default function CaseStudies() {
         'Streamlined access to county services',
       ],
       tech: ['Performance', 'UX', 'Government'],
-      url: '#',
+      url: 'https://www.jocogov.org/',
     },
     {
       name: 'D.C. Public Library',
-      challenge: 'Library system needed modern digital presence to improve patron access to resources and services',
-      myRole: 'Built front-end component library and conducted comprehensive accessibility audit as contributor to agency team',
+      challenge:
+        'Library system needed modern digital presence to improve patron access to resources and services',
+      myRole:
+        'Built front-end component library and conducted comprehensive accessibility audit as contributor to agency team',
       results: [
         'Enhanced navigation and content discovery',
         'Increased engagement with library resources',
@@ -52,7 +60,7 @@ export default function CaseStudies() {
         'Reusable component system for future development',
       ],
       tech: ['Component Library', 'Accessibility', 'React'],
-      url: '#',
+      url: 'https://www.dclibrary.org/',
     },
   ];
 
@@ -65,11 +73,16 @@ export default function CaseStudies() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
         {/* Section header */}
         <div className="mx-auto max-w-3xl pb-12 text-center md:pb-16">
-          <h2 id="portfolio-heading" className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+          <h2
+            id="portfolio-heading"
+            className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl"
+          >
             Recent Work
           </h2>
           <p className="text-lg text-gray-600">
-            Selected projects I contributed to as Senior Engineer with leading digital agencies. Each collaboration solved specific business challenges and delivered measurable results.
+            Selected projects I contributed to as Senior Engineer with leading
+            digital agencies. Each collaboration solved specific business
+            challenges and delivered measurable results.
           </p>
         </div>
 
@@ -158,28 +171,49 @@ export default function CaseStudies() {
                 ))}
               </div>
 
-              {/* View Live Site link */}
-              <a
-                href={project.url}
-                className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                aria-label={`View live site for ${project.name}`}
-              >
-                View Live Site →
-                <svg
-                  className="ml-1 h-4 w-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  aria-hidden="true"
+              {/* View Live Site link - only when URL is set */}
+              {project.url && project.url !== '#' ?
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                  aria-label={`View live site for ${project.name}`}
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                  />
-                </svg>
-              </a>
+                  View Live Site →
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
+              : <span className="inline-flex items-center text-sm font-semibold text-gray-500">
+                  View Live Site →
+                  <svg
+                    className="ml-1 h-4 w-4"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </span>
+              }
             </article>
           ))}
         </div>
