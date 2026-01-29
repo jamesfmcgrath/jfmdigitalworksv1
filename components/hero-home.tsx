@@ -1,111 +1,83 @@
-import PageIllustration from '@/components/page-illustration';
-
 export default function HeroHome() {
   return (
-    <section className="relative">
-      <PageIllustration />
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
+    <section 
+      className="relative min-h-[70vh] flex items-center bg-gradient-to-b from-gray-50 to-white pt-32 pb-16 md:pt-40 md:pb-20"
+      aria-labelledby="hero-heading"
+    >
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 w-full">
         {/* Hero content */}
-        <div className="pb-12 pt-32 md:pb-20 md:pt-40">
-          {/* Section header */}
-          <div className="pb-12 text-center md:pb-16">
-            <h1
-              className="mb-6 text-5xl font-bold md:text-6xl"
-              data-aos="zoom-y-out"
-              data-aos-delay={150}
-            >
-              Modern, secure web solutions <br className="max-lg:hidden" />
-              for a digital-first world
-            </h1>
-            <div className="mx-auto max-w-3xl">
-              <p
-                className="mb-8 text-lg text-gray-700"
-                data-aos="zoom-y-out"
-                data-aos-delay={300}
-              >
-                JFM Digital Works is a modern, security-first web consultancy
-                focused on building accessible, performant, and cloud-native
-                digital experiences. We specialize in creating high-quality web
-                applications that prioritize user experience and security,
-                serving clients in Ireland and across the EU.
-              </p>
-              <div className="relative">
-                <div
-                  className="mx-auto max-w-xs sm:flex sm:max-w-none sm:justify-center"
-                  data-aos="zoom-y-out"
-                  data-aos-delay={450}
-                >
-                  <a
-                    className="btn group mb-4 w-full btn-jfm-primary shadow-sm sm:mb-0 sm:w-auto min-h-[44px]"
-                    href="#contact"
-                    aria-label="Get In Touch"
-                  >
-                    <span className="relative inline-flex items-center">
-                      Get In Touch{' '}
-                      <span
-                        className="ml-1 tracking-normal text-blue-200 transition-transform group-hover:translate-x-0.5"
-                        aria-hidden="true"
-                      >
-                        -&gt;
-                      </span>
-                    </span>
-                  </a>
-                  <a
-                    className="btn w-full btn-jfm-secondary shadow-sm sm:ml-4 sm:w-auto min-h-[44px]"
-                    href="#services"
-                    aria-label="Our Services"
-                  >
-                    Our Services
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          {/* Hero image */}
-          <div
-            className="mx-auto max-w-3xl"
-            data-aos="zoom-y-out"
-            data-aos-delay={600}
+        <div className="text-center">
+          {/* Main headline */}
+          <h1
+            id="hero-heading"
+            className="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-5xl lg:text-6xl max-w-4xl mx-auto"
           >
-            <div className="relative aspect-video rounded-2xl bg-gray-900 px-5 py-3 shadow-xl">
-              <div className="relative mb-8 flex items-center justify-between before:block before:h-[9px] before:w-[41px] before:bg-[length:16px_9px] before:[background-image:radial-gradient(circle_at_4.5px_4.5px,var(--color-gray-600)_4.5px,transparent_0)] after:w-[41px]">
-                <span className="text-[13px] font-medium text-white">
-                  jfmdigitalworks.com
-                </span>
-              </div>
-              <div className="font-mono text-gray-400 [&_span]:opacity-0">
-                <span className="animate-[code-1_10s_infinite] terminal-prompt">
-                  ~/projects/jfmdigitalworks $
-                </span>{' '}
-                <span className="animate-[code-2_10s_infinite] terminal-command">
-                  gemini &quot;fix my CSS please&quot;
-                </span>
-                <br />
-                <span className="animate-[code-3_10s_infinite] terminal-ai">
-                  🤖 Gemini: &quot;Sure! But first, can you be more specific?&quot;
-                </span>
-                <br />
-                <span className="animate-[code-4_10s_infinite] terminal-command">
-                  gemini &quot;make it accessible and pretty&quot;
-                </span>
-                <br />
-                <span className="animate-[code-5_10s_infinite] terminal-ai">
-                  ✨ Gemini: &quot;Perfect! Generated 47 lines of pristine code&quot;
-                </span>
-                <br />
-                <span className="animate-[code-6_10s_infinite] terminal-metric">
-                  🚨 Lighthouse: Performance 98/100, Accessibility 100/100
-                </span>
-                <br />
-                <span className="animate-[code-7_10s_infinite] terminal-developer">
-                  🎉 Developer: &quot;AI pair programming FTW!&quot;
-                </span>
-                <br />
-                <span className="animate-[code-8_10s_infinite] terminal-success">
-                  ✅ Mission accomplished. Coffee time! ☕
-                </span>
-              </div>
-            </div>
+            Fast, Secure Web Development
+            <br className="hidden md:block" />
+            <span className="text-blue-600">for Businesses That Can&apos;t Afford Delays</span>
+          </h1>
+
+          {/* Subheadline */}
+          <p className="mb-8 text-lg text-gray-600 md:text-xl max-w-3xl mx-auto">
+            Drupal, React, WordPress expertise | WCAG compliance guaranteed | AI-accelerated delivery
+          </p>
+
+          {/* CTAs */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <a
+              href="#portfolio"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 min-h-[44px] transition-colors"
+              aria-label="View Recent Projects"
+            >
+              View Recent Projects
+              <svg
+                className="ml-2 w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </a>
+            <a
+              href="#contact"
+              className="inline-flex items-center justify-center px-8 py-3 text-base font-semibold text-gray-900 bg-white border-2 border-gray-300 rounded-lg hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-300 min-h-[44px] transition-colors"
+              aria-label="Book Discovery Call"
+            >
+              Book Discovery Call
+            </a>
+          </div>
+
+          {/* Trust Bar */}
+          <div className="bg-gray-100 rounded-lg py-4 px-6 max-w-4xl mx-auto">
+            <p className="text-base text-gray-700 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+              <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                100+ Projects Delivered
+              </span>
+              <span className="hidden sm:inline text-gray-400">|</span>
+              <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                Enterprise & Government Clients
+              </span>
+              <span className="hidden sm:inline text-gray-400">|</span>
+              <span className="flex items-center">
+                <svg className="w-5 h-5 mr-2 text-blue-600" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                Ireland, EU
+              </span>
+            </p>
           </div>
         </div>
       </div>

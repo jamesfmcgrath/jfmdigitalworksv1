@@ -1,142 +1,187 @@
 export default function CaseStudies() {
+  const projects = [
+    {
+      name: 'Lexington-Fayette Urban Council Government',
+      challenge: 'City of 300k+ residents needed multilingual site with significantly improved search functionality',
+      solution: 'Led front-end implementation with accessibility-first design, integrated advanced search architecture, and comprehensive WCAG 2.1 AA compliance',
+      results: [
+        'Project earned Gold - 2025 dotCOMM Awards',
+        '140% improvement in site search performance',
+        'Multi-language support for diverse community',
+        'Full WCAG 2.1 AA compliance achieved',
+      ],
+      tech: ['Modern Web', 'Accessibility', 'Multi-language', 'Government'],
+      award: 'Gold - 2025 dotCOMM Awards',
+      url: '#',
+    },
+    {
+      name: 'Metropolitan Water Reclamation District of Greater Chicago',
+      challenge: 'Large municipal organization needed accessible website with advanced document management and public education features',
+      solution: 'Developed responsive front-end templates, implemented accessibility enhancements, created document repository system',
+      results: [
+        'Project earned Pinnacle Award - NAGW',
+        'Comprehensive accessibility compliance',
+        'Improved public access to environmental data',
+        'Enhanced storytelling features for community engagement',
+      ],
+      tech: ['Accessibility', 'Government', 'Document Management'],
+      award: 'Pinnacle Award - NAGW',
+      url: '#',
+    },
+    {
+      name: 'Johnson County, Kansas',
+      challenge: 'County website needed complete redesign focused on resident usability and streamlined content access',
+      solution: 'Rebuilt front-end architecture with performance optimizations, conducted extensive cross-browser testing, improved content hierarchy',
+      results: [
+        'Significantly improved page load times',
+        'Enhanced mobile experience for 500k+ residents',
+        'Positive community feedback',
+        'Streamlined access to county services',
+      ],
+      tech: ['Performance', 'UX', 'Government'],
+      url: '#',
+    },
+    {
+      name: 'D.C. Public Library',
+      challenge: 'Library system needed modern digital presence to improve patron access to resources and services',
+      solution: 'Built front-end component library, conducted comprehensive accessibility audit, implemented improved navigation architecture',
+      results: [
+        'Enhanced navigation and content discovery',
+        'Increased engagement with library resources',
+        'Modern, accessible user interface',
+        'Reusable component system for future development',
+      ],
+      tech: ['Component Library', 'Accessibility', 'React'],
+      url: '#',
+    },
+  ];
+
   return (
-    <section id="work" className="bg-white">
+    <section
+      id="portfolio"
+      className="bg-white py-12 md:py-20"
+      aria-labelledby="portfolio-heading"
+    >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="py-12 md:py-20">
-          {/* Section header */}
-          <div className="mx-auto max-w-3xl pb-12 text-center md:pb-20">
-            <h2 className="text-3xl font-bold text-gray-800 md:text-4xl">
-              Featured Work
-            </h2>
-            <p className="text-lg text-gray-600 mt-4">
-              Recent projects showcasing our expertise in modern web development
-              and digital solutions.
-            </p>
-          </div>
+        {/* Section header */}
+        <div className="mx-auto max-w-3xl pb-12 text-center md:pb-16">
+          <h2 id="portfolio-heading" className="mb-4 text-3xl font-bold text-gray-900 md:text-4xl">
+            Recent Projects
+          </h2>
+          <p className="text-lg text-gray-600">
+            Real results from real projects. Each one solved a specific business challenge.
+          </p>
+        </div>
 
-          {/* Case studies grid */}
-          <div className="mx-auto max-w-4xl">
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {/* Case Study 1 */}
-              <div className="group relative overflow-hidden rounded-xl bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-4m-5 0H9m0 0H5m0 0h2m0 0h4m6 0v-7a2 2 0 00-2-2h-2a2 2 0 00-2 2v7m8-12V9a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10V9z"
-                      />
-                    </svg>
-                  </div>
+        {/* Case studies grid */}
+        <div className="grid gap-10 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <article
+              key={index}
+              className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+              aria-labelledby={`project-${index}-title`}
+            >
+              {/* Award badge if applicable */}
+              {project.award && (
+                <div className="mb-4 inline-flex items-center rounded-full bg-yellow-100 px-3 py-1 text-sm font-medium text-yellow-800">
+                  <svg
+                    className="mr-2 h-4 w-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                    aria-hidden="true"
+                  >
+                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                  </svg>
+                  {project.award}
                 </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                  Drupal Accessibility Overhaul
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Comprehensive accessibility audit and implementation for a
-                  government website, ensuring WCAG 2.1 AA compliance and
-                  improved user experience.
+              )}
+
+              {/* Project name */}
+              <h3
+                id={`project-${index}-title`}
+                className="mb-3 text-xl font-semibold text-gray-900"
+              >
+                {project.name}
+              </h3>
+
+              {/* Challenge */}
+              <div className="mb-4">
+                <p className="text-sm font-medium text-gray-700 mb-1">
+                  Challenge:
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    Drupal
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    Accessibility
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    WCAG 2.1
-                  </span>
-                </div>
+                <p className="text-gray-600">{project.challenge}</p>
               </div>
 
-              {/* Case Study 2 */}
-              <div className="group relative overflow-hidden rounded-xl bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow">
-                <div className="mb-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                  Decoupled React App Prototype
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Modern React application with TypeScript, featuring headless
-                  CMS integration and progressive web app capabilities.
+              {/* Solution */}
+              <div className="mb-4">
+                <p className="text-sm font-medium text-gray-700 mb-1">
+                  Solution:
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    React
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    TypeScript
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    PWA
-                  </span>
-                </div>
+                <p className="text-gray-600">{project.solution}</p>
               </div>
 
-              {/* Case Study 3 */}
-              <div className="group relative overflow-hidden rounded-xl bg-gray-50 p-6 shadow-sm hover:shadow-md transition-shadow md:col-span-2 lg:col-span-1">
-                <div className="mb-4">
-                  <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-gray-800 text-white">
-                    <svg
-                      className="h-6 w-6"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
-                      />
-                    </svg>
-                  </div>
-                </div>
-                <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                  Secure, Compliant Website for EU-based Nonprofit
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  GDPR-compliant website with enhanced security features, modern
-                  design, and multi-language support for European nonprofit
-                  organization.
+              {/* Results */}
+              <div className="mb-4">
+                <p className="text-sm font-medium text-gray-700 mb-2">
+                  Results:
                 </p>
-                <div className="flex flex-wrap gap-2">
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    GDPR
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    Security
-                  </span>
-                  <span className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800">
-                    i18n
-                  </span>
-                </div>
+                <ul className="space-y-1 text-gray-600">
+                  {project.results.map((result, resultIndex) => (
+                    <li key={resultIndex} className="flex items-start">
+                      <svg
+                        className="mr-2 mt-0.5 h-5 w-5 flex-shrink-0 text-green-600"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        aria-hidden="true"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      {result}
+                    </li>
+                  ))}
+                </ul>
               </div>
-            </div>
-          </div>
+
+              {/* Tech tags */}
+              <div className="mb-4 flex flex-wrap gap-2">
+                {project.tech.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className="inline-flex items-center rounded-full bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+
+              {/* View Live Site link */}
+              <a
+                href={project.url}
+                className="inline-flex items-center text-sm font-semibold text-blue-600 hover:text-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                aria-label={`View live site for ${project.name}`}
+              >
+                View Live Site
+                <svg
+                  className="ml-1 h-4 w-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                  />
+                </svg>
+              </a>
+            </article>
+          ))}
         </div>
       </div>
     </section>

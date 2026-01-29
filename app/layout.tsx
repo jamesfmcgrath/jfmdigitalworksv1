@@ -21,18 +21,18 @@ const firaCode = Fira_Code({
 
 export const metadata = {
   metadataBase: new URL('https://jfmdigitalworks.com'),
-  title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+  title: 'Fast Web Development for Growing Businesses | JFM Digital Works',
   description:
-    'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+    'Secure, accessible web development with 100+ projects delivered. Drupal, React, WordPress expertise. WCAG compliance guaranteed. Based in Ireland, serving EU. Free discovery call.',
   keywords:
-    'web development, accessibility, performance, security, React, TypeScript, Drupal, Ireland, EU',
+    'web developer Ireland, Drupal developer, accessibility audit, security audit, WCAG compliance, emergency web developer, web development Ireland, Drupal developer Ireland, fix drupal security issues Ireland, migrate drupal 7 to drupal 11, wordpress security audit Ireland',
   authors: [{ name: 'JFM Digital Works' }],
   creator: 'JFM Digital Works',
   publisher: 'JFM Digital Works',
   openGraph: {
-    title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+    title: 'Fast Web Development | JFM Digital Works',
     description:
-      'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+      '100+ projects delivered. Drupal, React, WordPress. WCAG compliance. Based in Ireland.',
     url: 'https://jfmdigitalworks.com',
     siteName: 'JFM Digital Works',
     locale: 'en_IE',
@@ -42,15 +42,15 @@ export const metadata = {
         url: '/images/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'JFM Digital Works - Secure, Accessible Web Solutions',
+        alt: 'JFM Digital Works - Fast Web Development',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+    title: 'Fast Web Development | JFM Digital Works',
     description:
-      'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+      '100+ projects delivered. Drupal, React, WordPress expertise.',
     images: ['/images/og-preview.png'],
   },
   robots: {
@@ -117,31 +117,52 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Organization',
+              '@type': 'ProfessionalService',
               name: 'JFM Digital Works',
               description:
-                'Modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+                'Web development, security audits, and accessibility services for enterprise and government',
               url: 'https://jfmdigitalworks.com',
-              logo: 'https://jfmdigitalworks.com/images/logo-192.png',
-              foundingDate: '2024',
+              telephone: '+353-87-399-9751',
+              email: 'hello@jfmdigitalworks.com',
               address: {
                 '@type': 'PostalAddress',
+                addressLocality: 'Westport',
+                addressRegion: 'County Mayo',
                 addressCountry: 'IE',
-                addressRegion: 'Ireland',
               },
-              contactPoint: {
-                '@type': 'ContactPoint',
-                email: 'info@jfmdigitalworks.com',
-                contactType: 'Customer Service',
-                availableLanguage: 'English',
+              geo: {
+                '@type': 'GeoCoordinates',
+                latitude: 53.8008,
+                longitude: -9.5218,
               },
-              sameAs: ['https://github.com/jamesfmcgrath'],
-              offers: {
-                '@type': 'Offer',
-                category: 'Web Development Services',
-                description:
-                  'Secure, accessible, and high-performance web solutions',
-              },
+              areaServed: [
+                {
+                  '@type': 'Country',
+                  name: 'Ireland',
+                },
+                {
+                  '@type': 'Country',
+                  name: 'United Kingdom',
+                },
+                {
+                  '@type': 'Place',
+                  name: 'European Union',
+                },
+              ],
+              priceRange: '€€€',
+              knowsAbout: [
+                'Drupal Development',
+                'React Development',
+                'WordPress Development',
+                'Web Accessibility',
+                'WCAG Compliance',
+                'Web Security',
+                'Platform Migration',
+              ],
+              sameAs: [
+                'https://www.linkedin.com/in/james-mcgrath-web-development',
+                'https://github.com/jamesfmcgrath',
+              ],
             }),
           }}
         />
