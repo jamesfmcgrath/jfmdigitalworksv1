@@ -21,18 +21,18 @@ const firaCode = Fira_Code({
 
 export const metadata = {
   metadataBase: new URL('https://jfmdigitalworks.com'),
-  title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+  title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
   description:
-    'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+    'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites. Gold Winner 2025 dotCOMM Awards.',
   keywords:
-    'web development, accessibility, performance, security, React, TypeScript, Drupal, Ireland, EU',
+    'LocalGov Drupal, Drupal accessibility consultant, LocalGov Drupal Ireland, Drupal consultant UK, WCAG compliance, government websites, local authority websites, Drupal migration, accessibility audit, Irish councils, UK councils',
   authors: [{ name: 'JFM Digital Works' }],
   creator: 'JFM Digital Works',
   publisher: 'JFM Digital Works',
   openGraph: {
-    title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+    title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
     description:
-      'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+      'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites. Gold Winner 2025 dotCOMM Awards.',
     url: 'https://jfmdigitalworks.com',
     siteName: 'JFM Digital Works',
     locale: 'en_IE',
@@ -42,15 +42,15 @@ export const metadata = {
         url: '/images/og-preview.png',
         width: 1200,
         height: 630,
-        alt: 'JFM Digital Works - Secure, Accessible Web Solutions',
+        alt: 'JFM Digital Works - LocalGov Drupal Specialist',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JFM Digital Works – Secure, Accessible Web Solutions',
+    title: 'JFM Digital Works – LocalGov Drupal Specialist for Irish & UK Councils',
     description:
-      'JFM Digital Works is a modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+      'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites.',
     images: ['/images/og-preview.png'],
   },
   robots: {
@@ -120,7 +120,7 @@ export default function RootLayout({
               '@type': 'Organization',
               name: 'JFM Digital Works',
               description:
-                'Modern web consultancy creating cloud-native, accessible, and secure digital experiences for clients in Ireland and the EU.',
+                'Award-winning LocalGov Drupal specialist serving Irish and UK local authorities. WCAG 2.1 AA compliant government websites.',
               url: 'https://jfmdigitalworks.com',
               logo: 'https://jfmdigitalworks.com/images/logo-192.png',
               foundingDate: '2024',
@@ -138,9 +138,9 @@ export default function RootLayout({
               sameAs: ['https://github.com/jamesfmcgrath'],
               offers: {
                 '@type': 'Offer',
-                category: 'Web Development Services',
+                category: 'LocalGov Drupal Services',
                 description:
-                  'Secure, accessible, and high-performance web solutions',
+                  'LocalGov Drupal implementation, migration, accessibility audits, and ongoing support for government websites',
               },
             }),
           }}

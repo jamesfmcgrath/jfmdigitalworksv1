@@ -9,14 +9,14 @@ export default function Services() {
               Our Services
             </h2>
             <p className="text-lg text-gray-600 mt-4">
-              We deliver modern, secure, and accessible web solutions tailored
-              to your business needs.
+              Specialized LocalGov Drupal expertise for Irish and UK councils
+              and government agencies.
             </p>
           </div>
 
           {/* Services grid */}
           <div className="mx-auto max-w-sm items-start gap-6 sm:max-w-none sm:grid sm:grid-cols-2 lg:grid-cols-4">
-            {/* Service 1 */}
+            {/* Service 1: LocalGov Drupal Implementation & Migration */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
@@ -30,21 +30,22 @@ export default function Services() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+                      d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
                     />
                   </svg>
                 </div>
               </div>
               <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                Web Development
+                LocalGov Drupal Implementation &amp; Migration
               </h3>
               <p className="text-gray-600 flex-grow">
-                Custom web applications built with modern frameworks like React,
-                Next.js, and TypeScript for performance and scalability.
+                Specialized expertise in LocalGov Drupal for Irish and UK
+                councils. From initial architecture to full migration, delivering
+                accessible, scalable solutions that serve communities effectively.
               </p>
             </div>
 
-            {/* Service 2 */}
+            {/* Service 2: Accessibility Audits & WCAG Compliance */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
@@ -64,15 +65,16 @@ export default function Services() {
                 </div>
               </div>
               <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                Front-end Engineering & Accessibility
+                Accessibility Audits &amp; WCAG Compliance
               </h3>
               <p className="text-gray-600 flex-grow">
-                Accessible, performant user interfaces that work for everyone.
-                WCAG compliance and modern best practices.
+                Comprehensive accessibility audits and remediation for government
+                websites. WCAG 2.1 AA compliance, automated testing pipelines,
+                and ongoing accessibility support to meet legal requirements.
               </p>
             </div>
 
-            {/* Service 3 */}
+            {/* Service 3: Technical Consulting & Problem Solving */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
@@ -86,21 +88,22 @@ export default function Services() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v4a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                      d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
                     />
                   </svg>
                 </div>
               </div>
               <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                Site Audits & Performance
+                Technical Consulting &amp; Problem Solving
               </h3>
               <p className="text-gray-600 flex-grow">
-                Comprehensive audits covering performance, security, and
-                accessibility. Get actionable insights to improve your site.
+                Expert troubleshooting for complex Drupal challenges. Module
+                conflicts, performance bottlenecks, deployment issues—get rapid
+                resolution from someone who&apos;s solved these problems before.
               </p>
             </div>
 
-            {/* Service 4 */}
+            {/* Service 4: Ongoing Drupal Support & Retainers */}
             <div className="group mb-8 bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow sm:mb-0 h-full flex flex-col">
               <div className="mb-4">
                 <div className="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-500 text-white">
@@ -114,17 +117,18 @@ export default function Services() {
                       strokeLinecap="round"
                       strokeLinejoin="round"
                       strokeWidth={2}
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                      d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                     />
                   </svg>
                 </div>
               </div>
               <h3 className="mb-2 text-lg font-semibold text-gray-800">
-                AI-Powered Workflows
+                Ongoing Drupal Support &amp; Retainers
               </h3>
               <p className="text-gray-600 flex-grow">
-                Streamline your development process with AI-assisted code
-                generation, testing, and deployment workflows.
+                Post-launch support and maintenance for councils and agencies.
+                Security updates, feature enhancements, performance monitoring,
+                and technical guidance when you need it.
               </p>
             </div>
           </div>

@@ -14,9 +14,9 @@ export default function Footer({ border = false }: { border?: boolean }) {
               <FooterLogo />
             </div>
             <div className="text-sm text-gray-400 max-w-lg">
-              Modern, security-first web consultancy focused on building
-              accessible, performant, and cloud-native digital experiences for
-              clients in Ireland and across the EU.
+              LocalGov Drupal specialist serving Irish and UK local authorities.
+              Award-winning accessible government websites with WCAG 2.1 AA
+              compliance.
             </div>
           </div>
           {/* 4th block */}
